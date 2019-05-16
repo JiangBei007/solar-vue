@@ -1,11 +1,11 @@
 <template>
   <div class="img">
-      <img src="../../static/img/japan_illustration.png" alt="">
+      <img src="../../static/img/dog1.jpg" alt="">
   </div>
 </template>
 <script>
 export default {
-  name:'sakura-home'
+  name:'vui-home'
 }
 </script>
 <style lang="scss" scoped>

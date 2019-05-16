@@ -6,7 +6,7 @@ import VueHighlightJS from 'vue-highlightjs'
 Vue.use(VueHighlightJS)
 
 Vue.config.productionTip = false
-const context = require.context('./', true, /^((?!demo\.vue).)+\.vue$/)
+const context = require.context('./', true, /^((?!demo\.vue).)+\.vue$/);
 try {
   context.keys().forEach(path => {
     let res = context(path)

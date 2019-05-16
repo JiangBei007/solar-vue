@@ -31,3 +31,5 @@ export { default as TabHead } from './tab/tab-head'
 export { default as TabItem } from './tab/tab-item'
 export { default as TabPane } from './tab/tab-pane'
 export { default as Tab } from './tab/tab'
+
+export { default as VuiInput } from './Input/index'

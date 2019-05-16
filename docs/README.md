@@ -3,9 +3,9 @@ home: true
 navbar: false
 heroImage: 
 actionText: Get Started →
-actionLink: views/design/color/
-footer: Inspired by Sakura
+actionLink: views/guide/install
+footer: This product comes from Jiangbei
 ---
 <ClientOnly>
-  <sakura-home/>
+  <vui-home/>
 </ClientOnly>

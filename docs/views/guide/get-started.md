@@ -25,5 +25,5 @@ export default {
 
 ```
 <ClientOnly>
-  <sakura-img/>
+  
 </ClientOnly>

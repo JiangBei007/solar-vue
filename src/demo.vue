@@ -1,7 +1,12 @@
 <template>
-  <div style="margin:60px">
+  <div>
     <s-datepicker v-model="selectedDate" @showPanel="y" @closePanel="z"></s-datepicker>
     {{sum}}
+		<button @click="x">哈哈哈</button>
+		<div>
+			<div class="title">简单示例，只能输入10个字符</div>
+			<vui-input title="只能输入10个字符：" v-model="val1" :max="10" type="text"></vui-input>
+		</div>
   </div>
 </template>
 <script>
@@ -14,7 +19,9 @@ Vue.use(toast)
 export default {
   data () {
     return {
-      selectedDate: new Date('2019-05-05')
+      selectedDate: new Date('2019-05-05'),
+			sum:0,
+			val1:"",
     }
   },
   computed: {

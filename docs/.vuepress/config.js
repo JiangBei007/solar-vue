@@ -1,7 +1,14 @@
 module.exports = {
     base:'/ui/',
-    title: 'Sakura UI',
-    description: 'Inspiration from heian sakura',
+    title: 'VUI',
+    description: "I'm glad to see you.",
+		configureWebpack: {
+			resolve: {
+				alias: {
+					'@': 'src'
+				}
+			}
+		},
     head: [
       ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
@@ -9,6 +16,7 @@ module.exports = {
       nav: [
         { text: 'Home', link: '/' },
         { text: 'Github', link: 'https://github.com/atJiangBei/ui/' },
+				{ text: '博客', link: 'https://jiangbei.online' },
       ],
       sidebar: [
           {

@@ -4,33 +4,33 @@ sidebarDepth: 2
 ---
 ## Input 输入框
 <ClientOnly>
-  <sakura-input/>
+  <vui-input/>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
-| icon | 图标名称 | string |- | - |
+| title | 标题 | string |- | - |
 | value/v-model|绑定值 | string |- | - |
-| disabled|原生属性，是否只读 | boolean |- | false |
-| readonly|原生属性，是否只读 | boolean |- | false |
-| error|错误提示 | string |- | - |
 | placeholder|输入框占位文本 | string |- | - |
+| type| 类型 | string | id-tel-text- | text |
+| warn|是否显示错误提示标 | boolean |- | false |
+| regexp|验证正则 | RegExp |- | - |
+| isReturn|返回的验证信息 | object | {} | {} |
+| getAge| 一个根据传入身份id返回年龄的函数 | Function |- | - |
+| align| 内容方向 | string | left-right | right |
+| warn|是否显示错误提示标 | boolean |- | false |
+| regexp|验证正则 | regexp |- | - |
+| maxage|最大年龄| Number | - |  |
+| minage|最大年龄| Number | - |  |
+| max|最大长度| Number | - |  |
+
+<font size=5>Events</font>
+| 事件名称| 说明 | 回调参数 | 
+| :------ | ------ | ------ |
+| change| value值改变触发 | 回调函数 |
+| clear| 点击清除按钮触发 | 回调函数|
 </ClientOnly>
 
-## Form 表单
-<ClientOnly>
-  <sakura-form/>
-<font size=5>Form Attributes</font>
-| 参数| 说明 | 类型 | 可选值 | 默认值 |
-| :------ | ------ | ------ | ------ | ------ |
-| model| 表单数据对象 | object |- | - |
-| rules|表单验证规则, 支持字段长度/字段正则/必要字段/自定义规则校验 | object |- | - |
 
-<font size=5>FormItem Attributes</font>
-| 参数| 说明 | 类型 | 可选值 | 默认值 |
-| :------ | ------ | ------ | ------ | ------ |
-| label |标签文本 | string |- | - |
-| name |表单域 model 字段 | string |- | - |
-</ClientOnly>
 
 ## datepicker 日期选择器
 <ClientOnly>
