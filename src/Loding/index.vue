@@ -8,41 +8,41 @@
 </template>
 
 <script>
-export default{
-	name:"vui-loading",
-	directives:{
-		stop:{
-			bind(el){
-				el.addEventListener("touchmove",event=>{
-					event.preventDefault()
-				})
-			}
-		}
-	},
-	props:{
-		show:{
-			type:Boolean,
-			default:false,
-		},
-		icon:{
-			type:String,
-			default:"loading"
-		}
-	},
-	computed:{
-		iconClass(){
-			return{
-				spot:this.icon === 'spot',
-				spotcolor:this.icon === 'spotcolor',
-				circle:this.icon === 'circle',
-			}
-		}
-	},
-	data(){
-		return{
-			text:"Loading"
-		}
-	}
+export default {
+  name: 'vui-loading',
+  directives: {
+    stop: {
+      bind (el) {
+        el.addEventListener('touchmove', event => {
+          event.preventDefault()
+        })
+      }
+    }
+  },
+  props: {
+    show: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
+      type: String,
+      default: 'loading'
+    }
+  },
+  computed: {
+    iconClass () {
+      return {
+        spot: this.icon === 'spot',
+        spotcolor: this.icon === 'spotcolor',
+        circle: this.icon === 'circle'
+      }
+    }
+  },
+  data () {
+    return {
+      text: 'Loading'
+    }
+  }
 }
 </script>
 

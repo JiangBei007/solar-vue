@@ -20,8 +20,8 @@ export default {
   data () {
     return {
       selectedDate: new Date('2019-05-05'),
-			sum:0,
-			val1:"",
+      sum: 0,
+      val1: ''
     }
   },
   computed: {

@@ -6,7 +6,7 @@
 		  <div>
 		  	<i :class="ipStyle" v-if="!(type==='text')"></i>
 		  	<p :class="ipStyle"><slot>{{text}}</slot></p>
-		  </div>		
+		  </div>
 		</template>
 	</div>
 </div>
@@ -14,77 +14,75 @@
 </template>
 
 <script>
-export default{
-	name:"vui-toast",
-	directives:{
-		stop:{
-			bind(el){
-				el.addEventListener("touchmove",event=>{
-					event.preventDefault()
-				})
-			}
-		}
-	},
-	watch:{
-		show(newv,oldv){
-			if(newv){
-				this.Init()
-			}
-			
-		},
-		value (val) {
+export default {
+  name: 'vui-toast',
+  directives: {
+    stop: {
+      bind (el) {
+        el.addEventListener('touchmove', event => {
+          event.preventDefault()
+        })
+      }
+    }
+  },
+  watch: {
+    show (newv, oldv) {
+      if (newv) {
+        this.Init()
+      }
+    },
+    value (val) {
 	      this.show = val
 	    }
-	},
-	computed:{
-		ipStyle(){
-			return {
-				'small-beautiful-toast-success':this.type === 'success',
-				'small-beautiful-toast-warn':this.type === 'warn',
-				'small-beautiful-toast-cancel':this.type === 'cancel',
-				'small-beautiful-toast-text':this.type === 'text',
-			}
-		},
-	},
-	props:{
-		value:Boolean,
-		type:{
-			type:String,
-			validator(value){
-		        return ['success', 'warn', 'cancel', 'text'].indexOf(value) !== -1 || value==''
+  },
+  computed: {
+    ipStyle () {
+      return {
+        'small-beautiful-toast-success': this.type === 'success',
+        'small-beautiful-toast-warn': this.type === 'warn',
+        'small-beautiful-toast-cancel': this.type === 'cancel',
+        'small-beautiful-toast-text': this.type === 'text'
+      }
+    }
+  },
+  props: {
+    value: Boolean,
+    type: {
+      type: String,
+      validator (value) {
+		        return ['success', 'warn', 'cancel', 'text'].indexOf(value) !== -1 || !value
 		     },
-		    default:'success'
-		},
-		time:{
-			type:Number,
-			default:2000
-		},
-		text:String,
-	},
-	created(){
-		if(this.value){
-			this.show = true;
-		};
-	},
-	data(){
-		return{
-			timeout:null,
-			show:false,
-		}
-	},
-	methods:{
-		Init(){
-			this.$emit("input",true);
-			this.$emit("on-show");
-			clearTimeout(this.timeout);
-			this.timeout = setTimeout(() => {
-				this.$emit("input",false);
-				this.$emit("on-hide");
-				this.show = false;
-				
-			},this.time)
-		},
-	}
+		    default: 'success'
+    },
+    time: {
+      type: Number,
+      default: 2000
+    },
+    text: String
+  },
+  created () {
+    if (this.value) {
+      this.show = true
+    };
+  },
+  data () {
+    return {
+      timeout: null,
+      show: false
+    }
+  },
+  methods: {
+    Init () {
+      this.$emit('input', true)
+      this.$emit('on-show')
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        this.$emit('input', false)
+        this.$emit('on-hide')
+        this.show = false
+      }, this.time)
+    }
+  }
 }
 </script>
 

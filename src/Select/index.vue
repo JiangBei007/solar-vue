@@ -1,11 +1,11 @@
 <template>
-<div class="small-beautiful-select"> 
+<div class="small-beautiful-select">
 	<div class="small-beautiful-select-label">
 		<label for="">{{title}}</label>
 		<slot name="icon"></slot>
 	</div>
 	<div class="small-beautiful-select-content">
-		<select v-model="defaultValue" 
+		<select v-model="defaultValue"
 				@change="selectChange"
 			:class="{'small-beautiful-select-content-srtl':direction==='rtl','small-beautiful-select-content-sltr':direction==='ltr'}">
 			<option disabled selected value="">{{placeholder}}</option>
@@ -19,79 +19,79 @@
 </template>
 
 <script>
-export default{
-	name:"vui-select",
-	model:{
-		prop:"valueSelect",
-		event:"change"
-	},
-	props:{
-		valueSelect:"",
-		placeholder:"",
-		title:{
-			type:String,
-			default:""
-		},
-		configure:{
-			type:Array,
-		},
-		direction:{
-			type:String,
-			validator(value){
-		        return ["rtl","ltr"].indexOf(value)!==-1
+export default {
+  name: 'vui-select',
+  model: {
+    prop: 'valueSelect',
+    event: 'change'
+  },
+  props: {
+    valueSelect: null,
+    placeholder: null,
+    title: {
+      type: String,
+      default: ''
+    },
+    configure: {
+      type: Array
+    },
+    direction: {
+      type: String,
+      validator (value) {
+		        return ['rtl', 'ltr'].indexOf(value) !== -1
 		     },
-		    default:"rtl"
-		},
-		valueMap:{
-			type:Array,
-			validator(value){
-				let arr = ["string","number"]
-		        return arr.indexOf(typeof(value[0]))!==-1&&arr.indexOf(typeof(value[1]))!==-1
+		    default: 'rtl'
+    },
+    valueMap: {
+      type: Array,
+      validator (value) {
+        let arr = ['string', 'number']
+		        return arr.indexOf(typeof (value[0])) !== -1 && arr.indexOf(typeof (value[1])) !== -1
 		     },
-		     default:['key','value']
-		}
-	},
-	watch:{
-		valueSelect(nvl){
-			this.defaultValue = nvl;
-		}
-	},
-	data(){
-		return{
-			defaultValue:"",//key
-			placeholderFlag:false,
-		}
-	},
-	created(){
-		this.Init()
-	},
-	methods:{
-		Init(){
-			const value = this.valueSelect;
-			const keyName = this.valueMap[0];
-			const valueName = this.valueMap[1];
-			this.defaultValue = this.valueSelect;
-			this.configure.forEach((item,index)=>{
-				if(value==item[keyName]){
-					this.placeholderFlag = true;
-				}
-			})
-		},
-		selectChange(){
-			const value = event.target.value;
-			const keyName = this.valueMap[0];
-			const valueName = this.valueMap[1];
-			if(value==this.placeholder)return;
-			this.placeholderFlag = true;
-			this.$emit("change",value);
-			this.defaultValue = value;
-		},
-		selectClear(){
-			this.placeholderFlag = false;
-			this.$emit("change","");
-			this.defaultValue = "";
-		}
-	}
+		     default: ['key', 'value']
+    }
+  },
+  watch: {
+    valueSelect (nvl) {
+      this.defaultValue = nvl
+    }
+  },
+  data () {
+    return {
+      defaultValue: '', // key
+      placeholderFlag: false
+    }
+  },
+  created () {
+    this.Init()
+  },
+  methods: {
+    Init () {
+      const value = this.valueSelect
+      const keyName = this.valueMap[0]
+      const valueName = this.valueMap[1]
+      this.defaultValue = this.valueSelect
+      this.configure.forEach((item, index) => {
+        if (value === item[keyName]) {
+          this.placeholderFlag = true
+        }
+      })
+    },
+    selectChange () {
+      const value = event.target.value
+      const keyName = this.valueMap[0]
+      const valueName = this.valueMap[1]
+      if (value === this.placeholder) return
+      this.placeholderFlag = true
+      this.$emit('change', value)
+      this.defaultValue = value
+    },
+    selectClear () {
+      this.placeholderFlag = false
+      this.$emit('change', '')
+      this.defaultValue = ''
+    }
+  }
 }
 </script>
 
