@@ -1,12 +1,12 @@
 {
-  "name": "vui",
-  "version": "0.0.6",
+  "name": "rain-misty",
+  "version": "0.0.1",
   "private": false,
-  "main": "dist/vui.umd.min.js",
-  "description": "an UI framework based on Vue.js",
+  "main": "dist/rm.umd.min.js",
+  "description": "vue-ui",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vui src/index.js",
+    "build": "vue-cli-service build --target lib --name rm src/index.js",
     "test:unit": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -22,7 +22,7 @@
   "keywords": [
     "UI",
     "vue",
-    "VUI"
+    "rain-misty"
   ],
   "author": "jiangbei",
   "license": "MIT",

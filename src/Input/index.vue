@@ -1,13 +1,13 @@
 <template>
-	<div class="small-beautiful-input">
-		<div class="small-beautiful-input-label">
+	<div class="misty-input">
+		<div class="misty-input-label">
 			<label :for="textId">{{title}}</label>
 		</div>
-		<div class="small-beautiful-input-form">
+		<div class="misty-input-form">
 			<input :type="nativeType" ref="input" :id="textId" :style="{'text-align':align}" :placeholder="placeholder" @input="valueChange"
 			 v-model="thisValue" @focus="valueFocus" @blur="valueBlur" :maxlength="max" />
-			<i class="small-beautiful-input-icon" @click="vulueClear" v-show="iconWarnClear"></i>
-			<i class="small-beautiful-input-warn" v-show="verification"></i>
+			<i class="misty-input-icon" @click="vulueClear" v-show="iconWarnClear"></i>
+			<i class="misty-input-warn" v-show="verification"></i>
 		</div>
 	</div>
 </template>
@@ -22,7 +22,7 @@
 		getAge
 	} from './../static/js/com.js'
 	export default {
-		name: 'vui-input',
+		name: 'rm-input',
 		model: {
 			prop: 'value',
 			event: 'change'
@@ -207,7 +207,7 @@
 <style>
 	@import url("../static/css/reset.css");
 
-	.small-beautiful-input {
+	.misty-input {
 		text-align: left;
 		display: flex;
 		padding: 7px;
@@ -218,20 +218,20 @@
 		border-bottom: .5px solid #e5e5e5;
 	}
 
-	.small-beautiful-input-label label {
+	.misty-input-label label {
 		display: block;
 		width: auto;
 		line-height: 24px;
 		min-height: 24px;
 	}
 
-	.small-beautiful-input-form {
+	.misty-input-form {
 		flex: 1;
 		display: flex;
 		align-items: center;
 	}
 
-	.small-beautiful-input-form input {
+	.misty-input-form input {
 		display: block;
 		flex: 1;
 		height: 24px;
@@ -239,7 +239,7 @@
 		color: inherit;
 	}
 
-	.small-beautiful-input-icon {
+	.misty-input-icon {
 		display: block;
 		height: 16px;
 		width: 16px;
@@ -249,7 +249,7 @@
 		margin: 0 5px;
 	}
 
-	.small-beautiful-input-warn {
+	.misty-input-warn {
 		display: block;
 		height: 16px;
 		width: 16px;

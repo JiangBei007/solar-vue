@@ -11,14 +11,14 @@ title: '快速上手'
 </template>
 
 <script>
-import {Button} from 'heian-sakura-ui'
-import 'heian-sakura-ui/dist/sakura.css'
+import {RmSwiper} from 'rain-misty'
+import 'rain-misty/dist/rain-misty.css'
 
 
 export default {
   name: 'app',
   components: {
-    's-button':Button
+    RmSwiper
   }
 }
 </script>

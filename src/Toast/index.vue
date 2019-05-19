@@ -1,5 +1,5 @@
 <template>
-<transition name="PaToastFade" >
+<transition name="MistyToastFade" >
 <div class="small-beautiful-toast"  v-show="show" v-stop>
 	<div class="small-beautiful-toast-all">
 		<template v-if=" type==='success' || type==='cancel' || type==='warn' || type==='text'">
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'vui-toast',
+  name: 'rm-toast',
   directives: {
     stop: {
       bind (el) {
@@ -88,10 +88,10 @@ export default {
 
 <style>
 	@import url("../static/css/reset.css");
-.PaToastFade-enter-active, .PaToastFade-leave-active {
+.MistyToastFade-enter-active, .MistyToastFade-leave-active {
   transition: opacity .5s;
 }
-.PaToastFade-enter, .PaToastFade-leave-to {
+.MistyToastFade-enter, .MistyToastFade-leave-to {
   opacity: 0;
 }
 .small-beautiful-toast{

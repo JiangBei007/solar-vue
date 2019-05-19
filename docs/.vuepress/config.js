@@ -1,6 +1,6 @@
 module.exports = {
     base:'/ui/',
-    title: 'VUI',
+    title: 'rain-misty-ui',
     description: "I'm glad to see you.",
 		configureWebpack: {
 			resolve: {
@@ -28,21 +28,13 @@ module.exports = {
               ]
             },
             {
-              title: '设计',
-              collapsable: true,
-              children: [
-                'views/design/color/',
-              ]
-            },
-            {
               title: '组件',
               collapsable: true,
               children: [
                 'views/components/basic/',
                 'views/components/form/',
-                'views/components/navigation/',
-                'views/components/notice/',
-                'views/components/other/'
+				'views/components/popup/',
+				'views/components/datadisplay/',
               ]
             },
         ]

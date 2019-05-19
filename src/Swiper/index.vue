@@ -1,7 +1,7 @@
 <template>
-	<div ref="small-swiper-root" class="small-beautiful-swiper">
-		<div class="small-beautiful-box" :class="classNames">
-			<slot name="small-beautiful-slide-list">
+	<div ref="small-swiper-root" class="misty-swiper">
+		<div class="misty-box" :class="classNames">
+			<slot name="misty-slide-list">
 				<div></div>
 				<div></div>
 				<div></div>
@@ -9,7 +9,7 @@
 			</slot>
 		</div>
 		<div v-if="pagination">
-			<span v-for="(it,ind) in lth" :key="ind" :class="{'small-beautiful-swiper-active':ind==index}"></span>
+			<span v-for="(it,ind) in lth" :key="ind" :class="{'misty-swiper-active':ind==index}"></span>
 		</div>
 	</div>
 </template>
@@ -17,7 +17,7 @@
 <script>
 import SmallSwiper from 'small-swiper'
 export default {
-  name: 'vui-swiper',
+  name: 'rm-swiper',
   mounted () {
     const ref = this.$refs['small-swiper-root']
     const _this = this
@@ -91,8 +91,8 @@ export default {
   computed: {
     classNames () {
       return {
-        'small-beautiful-lr': this.direction === 'horizontal' && this.effect === 'slide',
-        'small-beautiful-tb': this.direction === 'vertical'
+        'misty-lr': this.direction === 'horizontal' && this.effect === 'slide',
+        'misty-tb': this.direction === 'vertical'
       }
     }
   },
@@ -104,21 +104,21 @@ export default {
 
 <style>
 @import url("../static/css/reset.css");
-.small-beautiful-swiper{
+.misty-swiper{
 	height: 300px;
 	width: 100%;
 	overflow: hidden;
 	background: moccasin;
 	position: relative;
 }
-.small-beautiful-swiper .small-beautiful-box{
+.misty-swiper .misty-box{
 	height: 300px;
 	width: 100%;
 }
-.small-beautiful-swiper .small-beautiful-lr{
+.misty-swiper .misty-lr{
 	display: flex;
 }
-.small-beautiful-swiper .small-beautiful-box>div{
+.misty-swiper .misty-box>div{
 	flex-shrink:0;
 	height:100%;
 	width: 100%;
@@ -128,12 +128,12 @@ export default {
 	justify-content: center;
 }
 
-.small-beautiful-swiper img{
+.misty-swiper img{
 	align-items: center;
 	display: block;
 	width: 100%;
 }
-.small-beautiful-swiper >div:nth-child(2){
+.misty-swiper >div:nth-child(2){
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -142,7 +142,7 @@ export default {
 	height: 20px;
 	line-height: 20px;
 }
-.small-beautiful-swiper >div:nth-child(2)>span{
+.misty-swiper >div:nth-child(2)>span{
 	display: inline-block;
 	width: 10px;
 	height: 10px;
@@ -152,7 +152,7 @@ export default {
 	background: rgba(0,0,0,0.3);
 	transition: width .3s;
 }
-.small-beautiful-swiper >div:nth-child(2)>span.small-beautiful-swiper-active{
+.misty-swiper >div:nth-child(2)>span.misty-swiper-active{
 	width:24px;
 	border-radius: 10px;
 	transition: width .3s;
