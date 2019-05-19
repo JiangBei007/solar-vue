@@ -7,5 +7,5 @@ actionLink: views/guide/install
 footer: This product comes from Jiangbei
 ---
 <ClientOnly>
-  <vui-home/>
+  <rm-home/>
 </ClientOnly>
