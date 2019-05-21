@@ -1,6 +1,6 @@
 {
   "name": "rain-misty",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "main": "dist/rm.umd.min.js",
   "description": "vue-ui",
@@ -32,7 +32,6 @@
   "homepage": "https://github.com/atJiangBei/ui#readme",
   "dependencies": {
     "gh-pages": "^2.0.1",
-    "small-swiper": "^1.0.4",
     "vue": "^2.6.10",
     "vue-highlightjs": "^1.3.3"
   },
@@ -44,6 +43,7 @@
     "chai": "^4.1.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "small-swiper": "^1.0.7",
     "vue-template-compiler": "^2.5.21",
     "vuepress": "^0.13.1"
   },

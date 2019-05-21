@@ -9,6 +9,9 @@ module.exports = {
 				}
 			}
 		},
+	markdown: {
+		lineNumbers: true
+	},
     head: [
       ['link', { rel: 'icon', href: '/favicon.ico' }]
     ],
@@ -24,7 +27,7 @@ module.exports = {
               collapsable: true,
               children: [
                 'views/guide/install.md',
-                'views/guide/get-started.md'
+                'views/guide/started.md'
               ]
             },
             {

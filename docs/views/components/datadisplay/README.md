@@ -15,4 +15,5 @@ sidebarDepth: 2
 | direction | 方向 | string | horizontal/vertical | horizontal |
 | pagination | 是否显示分页 | boolean |  | false |
 | delayed | 自动滑动的间隔时间(单位毫秒，至少为2000) | number |  | 2000 |
+| disabledHand | 禁用手动滑动 | boolean |  | false |
 </ClientOnly>
