@@ -1,6 +1,6 @@
 {
   "name": "rain-misty",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": false,
   "main": "dist/rm.umd.min.js",
   "description": "vue-ui",
