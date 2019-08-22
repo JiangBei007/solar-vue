@@ -38,6 +38,7 @@ module.exports = {
                 'views/components/form/',
 				'views/components/popup/',
 				'views/components/datadisplay/',
+				'views/components/view/',
               ]
             },
         ]
