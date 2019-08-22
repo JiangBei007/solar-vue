@@ -25,4 +25,8 @@
 	margin: 0 auto;
 	overflow-y: scroll;
 }
+.vui-body::-webkit-scrollbar {
+    width:1px;  
+    height:2px;
+}
 </style>
