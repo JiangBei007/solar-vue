@@ -1,5 +1,5 @@
 ---
-title: 'Data Display'
+title: 'DataDisplay'
 sidebarDepth: 2
 ---
 ## Swiper 组件

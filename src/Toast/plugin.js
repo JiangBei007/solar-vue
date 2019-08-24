@@ -13,13 +13,12 @@ const plugin = {
 
 		const toast = {
 			show(options = {}) {
-				watcher && watcher()
 				for (let i in Object.assign({}, pluginOptions, options)) {
 					if (i !== 'show') {
 						$vm[i] = options[i]
 					}
 				}
-				watcher = $vm.$watch('show', (val) => {
+				$vm.$watch('show', (val) => {
 					val && options.onShow && options.onShow($vm)
 					val === false && options.onHide && options.onHide($vm)
 				})
@@ -39,20 +38,14 @@ const plugin = {
 			}
 		}
 
-		// all Vux's plugins are included in this.$vux
-		if (!vue.$vui) {
-			vue.$vui = {
+		if (vue.prototype.$rm) {
+			vue.prototype.$rm.toast = toast
+		} else {
+			vue.prototype.$rm = {
 				toast
 			}
-		} else {
-			vue.$vui.toast = toast
 		}
 
-		vue.mixin({
-			created: function() {
-				this.$vui = vue.$vui
-			}
-		})
 	}
 }
 

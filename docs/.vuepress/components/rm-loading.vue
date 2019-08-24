@@ -3,10 +3,10 @@
 		<rm-body>
 			<div class="s-loading">
 				<rm-loading :show="show" :icon="icon">加载中</rm-loading>
-				<div class="btn" @click="load('')">点击我显示</div>
-				<div class="btn" @click="load('spot')">点击我显示spot--loading</div>
-				<div class="btn" @click="load('spotcolor')">点击我显示spotcolor--loading</div>
-				<div class="btn" @click="load('circle')">点击我显示circle--loading</div>
+				<div class="vui-button" @click="load('')">loading</div>
+				<div class="vui-button" @click="load('spot')">icon='spot'</div>
+				<div class="vui-button" @click="load('spotcolor')">icon='spotcolor'</div>
+				<div class="vui-button" @click="load('circle')">icon='circle'</div>
 			</div>
 		</rm-body>
 		<template v-slot:code>
@@ -33,10 +33,10 @@
 				code: `
 			<div class="s-loading">
 				<rm-loading :show="show" :icon="icon">加载中</rm-loading>
-				<div class="btn"  @click="load('')">点击我显示</div>
-				<div class="btn"  @click="load('spot')">点击我显示spot--loading</div>
-				<div class="btn"  @click="load('spotcolor')">点击我显示spotcolor--loading</div>
-				<div class="btn"  @click="load('circle')">点击我显示circle--loading</div>
+				<div class="vui-button" @click="load('')">loading</div>
+				<div class="vui-button" @click="load('spot')">icon='spot'</div>
+				<div class="vui-button" @click="load('spotcolor')">icon='spotcolor'</div>
+				<div class="vui-button" @click="load('circle')">icon='circle'</div>
 			</div>
 
 	import rmLoading from "../../../src/Loading/index"
@@ -60,28 +60,6 @@
 			},2000)
 		}
 	}
-	
-.s-loading .btn{
-	background: linear-gradient(90deg, rgb(29, 98, 240), rgb(25, 213, 253));
-    color: rgb(255, 255, 255);
-	position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-	margin-top: 10px;
-    padding-left: 14px;
-    padding-right: 14px;
-    box-sizing: border-box;
-    font-size: 18px;
-    text-align: center;
-    text-decoration: none;
-    color: #FFFFFF;
-    line-height: 2.33333333;
-    border-radius: 5px;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    overflow: hidden;
-	width: 88%;
-}
 `
 					.replace(/^ {8}/gm, "").trim(),
 			}
@@ -99,25 +77,4 @@
 </script>
 
 <style>
-	.s-loading .btn {
-		background: linear-gradient(90deg, rgb(29, 98, 240), rgb(25, 213, 253));
-		color: rgb(255, 255, 255);
-		position: relative;
-		display: block;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 10px;
-		padding-left: 14px;
-		padding-right: 14px;
-		box-sizing: border-box;
-		font-size: 18px;
-		text-align: center;
-		text-decoration: none;
-		color: #FFFFFF;
-		line-height: 2.33333333;
-		border-radius: 5px;
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-		overflow: hidden;
-		width: 88%;
-	}
 </style>

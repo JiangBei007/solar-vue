@@ -2,54 +2,98 @@
 	<rm-card>
 		<rm-body>
 			<div class="s-select">
-				<div class="title">select示例</div>
-				<rm-select 
-					:value-map="['key','value']" 
-					title="身份证号" 
-					placeholder="请选择" 
+				<div class="vui-title">select示例</div>
+				<rm-select
+					:value-map="['key', 'value']"
+					title="身份证号："
+					placeholder="请选择"
 					v-model="seval"
 					direction="rtl"
 					@change="schange"
-					:configure="configures">
-				</rm-select>
-				<div>选中值{{seval}}</div>
+					:configure="configures"
+				></rm-select>
+				<div class="vui-result">
+					<span>选中值：</span>
+					<p>{{ seval }}</p>
+				</div>
+				<div class="vui-title">附带轻触按钮 value-map="['label', 'value']"</div>
+				<rm-select
+					:value-map="['label', 'value']"
+					title="狗的种类："
+					placeholder="请选择"
+					v-model="seval2"
+					direction="rtl"
+					:clear="true"
+					@change="schange2"
+					:configure="configures2"
+				></rm-select>
+				<div class="vui-result">
+					<span>选中值：</span>
+					<p>{{ seval2 }}</p>
+				</div>
 			</div>
 		</rm-body>
 		<template v-slot:code>
-			<pre v-highlightjs><code class="vue">{{code}}</code></pre>
+			<pre v-highlightjs>
+				<code class="css">
+				{{ code }}
+				</code>
+			</pre>
 		</template>
 	</rm-card>
 </template>
 
 <script>
-	import Vue from "vue";
-	import VueHighlightJS from 'vue-highlightjs'
-	import RmSelect from "../../../src/Select/index"
-	Vue.use(VueHighlightJS)
+import Vue from 'vue'
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/atom-one-dark.css'
+import RmSelect from '../../../src/Select/index'
 
-export default{
-	name:"m-select",
-	components:{
+Vue.use(VueHighlightJS)
+
+export default {
+	name: 'm-select',
+	components: {
 		RmSelect
 	},
-	data(){
-		return{
-			configures:[{key:1,value:"大黄"},{key:2,value:"小黑"}],
-			seval:"",
-			code:`,
-	<div class="s-select">
-		<div class="title">select示例</div>
-		<rm-select 
-			:value-map="['key','value']" 
-			title="身份证号" 
-			placeholder="请选择" 
-			v-model="seval"
-			direction="rtl"
-			@change="schange"
-			:configure="configures">
-		</rm-select>
+	data() {
+		return {
+			configures: [{ key: 1, value: '大黄' }, { key: 2, value: '小黑' }],
+			seval: '',
+			configures2: [{ label: 'a', value: '金毛附带轻触按钮附带轻触按钮附带轻触按钮附带轻触按钮' }, { label: 'b', value: '哈士奇' }],
+			seval2: '',
+			code: `
+<div class="s-select">
+	<div class="vui-title">select示例</div>
+	<rm-select
+		:value-map="['key', 'value']"
+		title="身份证号："
+		placeholder="请选择"
+		v-model="seval"
+		direction="rtl"
+		@change="schange"
+		:configure="configures"
+	></rm-select>
+	<div class="vui-result">
+		<span>选中值：</span>
+		<p>{{ seval }}</p>
 	</div>
-
+	<div class="vui-title">附带轻触按钮 value-map="['label', 'value']"</div>
+	<rm-select
+		:value-map="['label', 'value']"
+		title="狗的种类："
+		placeholder="请选择"
+		v-model="seval2"
+		direction="rtl"
+		:clear="true"
+		@change="schange2"
+		:configure="configures2"
+	></rm-select>
+	<div class="vui-result">
+		<span>选中值：</span>
+		<p>{{ seval2 }}</p>
+	</div>
+</div>
 import rmSelect from "../../../src/Select/index"
 export default{
 	name:"s-select",
@@ -58,38 +102,35 @@ export default{
 	},
 	data(){
 		return{
-			configures:[{key:1,value:"大黄"},{key:2,value:"小黑"}],
-			seval:"",
+			configures: [{ key: 1, value: '大黄' }, { key: 2, value: '小黑' }],
+			seval: '',
+			configures2: [{ label: 'a', value: '金毛附带轻触按钮附带轻触按钮附带轻触按钮附带轻触按钮' }, { label: 'b', value: '哈士奇' }],
+			seval2: '',
 		}
 	},
 	methods:{
-		schange(val){
-			console.log(val,this.seval)
+		schange(val) {
+			console.log(val, this.seval)
+		},
+		schange2(val) {
+			console.log(val, this.seval2)
 		}
 	}
 }
-
-.s-select .title{
-		text-align: center;
-		line-height: 36px;
-		font-size: 16px;
-	}
-
 `
+				.replace(/^ {8}/gm, '')
+				.trim()
 		}
 	},
-	methods:{
-		schange(val){
-			console.log(val,this.seval)
+	methods: {
+		schange(val) {
+			console.log(val, this.seval)
+		},
+		schange2(val) {
+			console.log(val, this.seval2)
 		}
 	}
 }
 </script>
 
-<style>
-.s-select .title{
-		text-align: center;
-		line-height: 36px;
-		font-size: 16px;
-	}
-</style>
+<style></style>

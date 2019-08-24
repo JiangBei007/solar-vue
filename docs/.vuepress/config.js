@@ -38,7 +38,8 @@ module.exports = {
 				collapsable: false,
 				children: [
 					'views/guide/install.md',
-					'views/guide/started.md'
+					'views/guide/started.md',
+					'views/guide/commonjs.md'
 				]
 			},
 			{
