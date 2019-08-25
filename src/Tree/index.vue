@@ -1,100 +1,14 @@
 <script>
 export default {
-	name:"rm-tree",
+	name:"rmTree",
 	props: {
-		type: {
-			type: String,
-			default: 'normal'
-		},
-		text: {
-			type: String,
-			default: 'normal'
-		},
-		selectedData: {
+		list: {
 			type: Array,
 			default: () => []
 		}
 	},
 	data() {
 		return {
-			options: [
-				{
-					label: '我是一级标题1',
-					value: 'school1',
-					children: [
-						{
-							label: '我是一，二级标题1',
-							value: 'grade1-1',
-							children: [
-								{
-									label: '我是三级标题1',
-									value: 'class1-1-1'
-								},
-								{
-									label: '我是三级标题2',
-									value: 'class1-1-2',
-									children: [
-										{
-											label: '我是三级标题1',
-											value: 'class1-1-1'
-										},
-										{
-											label: '我是三级标题2',
-											value: 'class1-1-2'
-										},
-										{
-											label: '我是三级标题2',
-											value: 'class1-1-2',
-											children: [
-												{
-													label: '我是三级标题1',
-													value: 'class1-1-1'
-												},
-												{
-													label: '我是三级标题2',
-													value: 'class1-1-2'
-												},
-												{
-													label: '我是三级标题2',
-													value: 'class1-1-2',
-													children: [
-														{
-															label: '我是三级标题1',
-															value: 'class1-1-1'
-														},
-														{
-															label: '我是三级标题2',
-															value: 'class1-1-2'
-														},
-														{
-															label: '我是三级标题2',
-															value: 'class1-1-2',
-															children: [
-																{
-																	label: '我是三级标题1',
-																	value: 'class1-1-1'
-																},
-																{
-																	label: '我是三级标题2',
-																	value: 'class1-1-2'
-																}
-															]
-														},
-													]
-												},
-											]
-										},
-									]
-								},
-								{
-									label: '我是三级标题1',
-									value: 'class1-1-1'
-								}
-							]
-						}
-					]
-				}
-			]
 		}
 	},
 	mounted() {
@@ -143,11 +57,13 @@ export default {
 			}
 		},
 		ToggleSwitch() {
-			const list = event.currentTarget.parentNode.classList
-			if ([].includes.call(list, 'tree-menu-open')) {
-				list.remove('tree-menu-open')
+			const node = event.currentTarget.parentNode//.parentNode
+			const list = node.classList
+			// node.getBoundingClientRect()
+			if ([].includes.call(list, 'tree-menu-close')) {
+				list.remove('tree-menu-close')
 			} else {
-				list.add('tree-menu-open')
+				list.add('tree-menu-close')
 			}
 		},
 		toggleChecked() {
@@ -201,7 +117,7 @@ export default {
 			}
 		},
 		createNode(h) {
-			const data = this.options
+			const data = this.list
 			const createdElement = data => {
 				if (!data) return
 				return data.map(dom => {
@@ -221,7 +137,8 @@ export default {
 								'div',
 								{
 									class: {
-										'misty-tree-title': true
+										'misty-tree-title': true,
+										'tree-menu-close': !dom.open
 									}
 								},
 								[
@@ -229,7 +146,7 @@ export default {
 										if (children && children.length) {
 											return h('i', {
 												class: {
-													'tree-menu-open': false
+													'tree-menu-close': false
 												},
 												on: {
 													click: () => {
@@ -281,10 +198,14 @@ export default {
 }
 .misty-tree-container {
 	margin-left: 45px;
+	/* max-height: 42px;
+	overflow: hidden;
+	transition: all .3s; */
 }
 .misty-tree-container-no{
 	margin-left: 30px;
 }
+
 .misty-tree-title {
 	display: flex;
 	align-items: center;
@@ -293,27 +214,28 @@ export default {
 	overflow: hidden;
 	transition: all 0.3s;
 }
-.misty-tree-container:has(.tree-menu-open){
-	
-}
-.misty-tree div.tree-menu-open ~ .misty-tree-container > div {
+/* .tree-menu-close{
+	max-height: 420px;
+	transition: all .3s;
+} */
+.misty-tree div.tree-menu-close ~ .misty-tree-container > div {
 	height: 0;
 	overflow: hidden;
 	transition: all 0.3s;
 }
 
 
-.misty-tree-title i {
+.misty-tree-title>i {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
 	background: url(../static/icon/open.png) no-repeat center;
 	background-size: 15px;
-	transform: rotate(0deg);
+	transform: rotate(450deg);
 	transition: all 0.3s;
 }
-.tree-menu-open i {
-	transform: rotate(90deg);
+.tree-menu-close>i {
+	transform: rotate(0deg);
 	transition: all 0.3s;
 }
 .misty-tree-title span {
@@ -321,7 +243,7 @@ export default {
 	width: 13px;
 	height: 13px;
 	border: 1px solid #dcdee2;
-	border-radius: 2px;
+	border-radius: 3px;
 	transition: all 0.2s;
 }
 .misty-tree-title .tree-some-checked {

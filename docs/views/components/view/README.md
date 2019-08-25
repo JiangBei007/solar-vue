@@ -2,7 +2,7 @@
 title: 'view'
 sidebarDepth: 2
 ---
-## tree 组件
+## Tree 组件
 <ClientOnly>
   <rm-tree/>
 <font size=5>Attributes</font>

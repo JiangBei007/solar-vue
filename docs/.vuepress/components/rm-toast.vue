@@ -2,15 +2,13 @@
 	<rm-card>
 		<rm-body>
 			<div class="s-toast">
-				<rm-toast :type="type" v-model="show">你好</rm-toast>
+				<rm-toast :type="type" v-model="show">{{ message }}</rm-toast>
 				<div class="vui-title">成功提示</div>
-				<div class="vui-button" @click="toast('success')">success</div>
-				<div class="vui-title">警告提示</div>
-				<div class="vui-button" @click="toast('warn')">warn</div>
+				<div class="vui-button" @click="toast('success','成功')">success</div>
 				<div class="vui-title">失败提示</div>
-				<div class="vui-button" @click="toast('cancel')">cancel</div>
+				<div class="vui-button" @click="toast('cancel','失败')">cancel</div>
 				<div class="vui-title">文字提示</div>
-				<div class="vui-button" @click="toast('text')">text</div>
+				<div class="vui-button" @click="toast('text','这是一行文字')">text</div>
 				<div class="vui-title">全局调用</div>
 				<div class="vui-button" @click="toastpublin('')">text调用</div>
 				<div class="vui-button" @click="toastpublin('success')">success</div>
@@ -38,21 +36,26 @@ export default {
 		return {
 			show: false,
 			type: '',
-			code: `
+			message:"",
+			code: `,
+			
+			<rm-toast :type="type" v-model="show">{{ message }}</rm-toast>
+			
 `
 				.replace(/^ {8}/gm, '')
 				.trim()
 		}
 	},
 	methods: {
-		toast(type) {
+		toast(type,text) {
 			this.type = type
 			this.show = true
+			this.message = text
 		},
 		toastpublin(type) {
 			if (type) {
 				this.$rm.toast.show({
-					type: 'success',
+					type,
 					text: '出来吧我的小伙'
 				})
 			} else {
