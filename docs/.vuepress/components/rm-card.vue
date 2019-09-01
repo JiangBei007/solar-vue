@@ -26,14 +26,17 @@ export default {
 	}
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+.theme-container table {
+	display: block;
+}
 .card {
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	box-shadow: 0 0 3px 0 #ccc;
-	min-width:400px;
+	max-width: 100%;
+	min-width: 375px;
 	.card-content {
-		padding: 14px;
 		border-bottom: 1px solid #ccc;
 	}
 	.card-operation {

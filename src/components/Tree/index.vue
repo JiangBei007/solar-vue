@@ -229,7 +229,7 @@ export default {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
-	background: url(../static/icon/open.png) no-repeat center;
+	background: url(../../icons/open.png) no-repeat center;
 	background-size: 15px;
 	transform: rotate(450deg);
 	transition: all 0.3s;
@@ -247,7 +247,7 @@ export default {
 	transition: all 0.2s;
 }
 .misty-tree-title .tree-some-checked {
-	background: url(../static/icon/nothing.png) no-repeat center;
+	background: url(../../icons/nothing.png) no-repeat center;
 	background-size: 15px;
 	border: none;
 	width: 15px;
@@ -256,7 +256,7 @@ export default {
 	transition: all 0.2s;
 }
 .misty-tree-title .tree-every-checked {
-	background: url(../static/icon/selected.png) no-repeat center;
+	background: url(../../icons/selected.png) no-repeat center;
 	background-size: 15px;
 	border: none;
 	width: 15px;

@@ -7,6 +7,7 @@ function resolve(dir) {
 
 module.exports = {
 	outputDir: 'dist',
+	publicPath: './',
 	devServer: {
 		port: 8000,
 		proxy: {

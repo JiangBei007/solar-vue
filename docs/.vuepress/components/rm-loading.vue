@@ -19,7 +19,7 @@
 <script>
 	import Vue from "vue";
 	import VueHighlightJS from 'vue-highlightjs'
-	import RmLoading from "../../../src/Loading/index"
+	import RmLoading from "../../../src/components/Loading/index"
 	Vue.use(VueHighlightJS)
 	export default {
 		name: "m-loading",

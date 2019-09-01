@@ -16,11 +16,11 @@
 	import {
 		idReg18,
 		telReg
-	} from './../reg/index.js'
+	} from './../../until/reg'
 	import {
 		RandomCharacter,
 		getAge
-	} from './../static/js/com.js'
+	} from './../../until/common'
 	export default {
 		name: 'rm-input',
 		model: {
@@ -205,7 +205,7 @@
 </script>
 
 <style>
-	@import url("../static/css/reset.css");
+	@import url("../../styles/css/reset.css");
 
 	.misty-input {
 		text-align: left;

@@ -46,7 +46,7 @@
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'
-import RmInput from '../../../src/Input/index'
+import RmInput from '../../../src/components/Input/index'
 import { getAge } from './until'
 Vue.use(VueHighlightJS)
 

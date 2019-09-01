@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style>
-@import url('../static/css/reset.css');
+@import url('../../styles/css/reset.css');
 .MistyToastFade-enter-active,
 .MistyToastFade-leave-active {
 	transition: opacity 0.5s;
@@ -139,7 +139,7 @@ export default {
 	background-size: 100%;
 }
 .misty-toast .misty-toast-all i.misty-toast-cancel {
-	background: transparent url(../static/icon/cancel.png) no-repeat center;
+	background: transparent url(../../icons/cancel.png) no-repeat center;
 	background-size: 100%;
 }
 .misty-toast .misty-toast-all i.misty-toast-text {

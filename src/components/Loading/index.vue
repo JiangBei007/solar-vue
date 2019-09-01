@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style>
-@import url("../static/css/reset.css");
+@import url("../../styles/css/reset.css");
 @keyframes FlowerCircle{
 	from{
 		transform: rotate(0deg);
@@ -97,15 +97,15 @@ export default {
 	animation: FlowerCircle 1s steps(12, end) infinite;
 }
 .misty-loading  >div i.spot{
-	background:url("../static/icon/loading-spot.png") no-repeat center;
+	background:url("../../icons/loading-spot.png") no-repeat center;
 	background-size: 100%;
 }
 .misty-loading  >div .spotcolor{
-	background:url("../static/icon/loading-spot-color.png") no-repeat center;
+	background:url("../../icons/loading-spot-color.png") no-repeat center;
 	background-size: 100%;
 }
 .misty-loading  >div .circle{
-	background:url("../static/icon/loading.png") no-repeat center;
+	background:url("../../icons/loading.png") no-repeat center;
 	background-size: 100%;
 }
 .misty-loading  >div	p{

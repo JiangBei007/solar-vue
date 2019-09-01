@@ -23,8 +23,8 @@
 <script>
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
-import RmToast from '../../../src/Toast/index'
-import ToastPlugin from '../../../src/Toast/plugin'
+import RmToast from '../../../src//components/Toast/index'
+import ToastPlugin from '../../../src/components/Toast/plugin'
 Vue.use(ToastPlugin)
 Vue.use(VueHighlightJS)
 export default {

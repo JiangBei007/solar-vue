@@ -10,7 +10,7 @@
 <script>
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
-import RmTree from '../../../src/Tree/index'
+import RmTree from '../../../src/components/Tree/index'
 Vue.use(VueHighlightJS)
 
 export default {

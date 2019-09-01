@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style>
-@import url('../static/css/reset.css');
+@import url('../../styles/css/reset.css');
 
 .misty-select {
 	display: flex;
@@ -184,7 +184,7 @@ export default {
 	width: 14px;
 	height: 14px;
 	top: 8px;
-	background: url(../static/icon/drop-down-right.png) no-repeat 0 0;
+	background: url(../../icons/drop-down-right.png) no-repeat 0 0;
 	background-size: 100%;
 }
 </style>

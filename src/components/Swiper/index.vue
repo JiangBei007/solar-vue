@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style>
-@import url('../static/css/reset.css');
+@import url('../../styles/css/reset.css');
 
 .misty-swiper {
 	height: 300px;

@@ -47,7 +47,7 @@
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'
-import RmSelect from '../../../src/Select/index'
+import RmSelect from '../../../src/components/Select/index'
 
 Vue.use(VueHighlightJS)
 

@@ -83,7 +83,7 @@
 <script>
 import Vue from 'vue'
 import VueHighlightJS from 'vue-highlightjs'
-import RmSwiper from '../../../src/Swiper/index'
+import RmSwiper from '../../../src/components/Swiper/index'
 Vue.use(VueHighlightJS)
 
 export default {
