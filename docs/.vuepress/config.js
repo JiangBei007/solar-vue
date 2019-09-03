@@ -1,6 +1,6 @@
 module.exports = {
 	base: '/ui/',
-	title: 'rain-misty-ui',
+	title: 'Rain-Misty',
 	description: "I'm glad to see you.",
 	configureWebpack: {
 		resolve: {
@@ -9,15 +9,15 @@ module.exports = {
 			}
 		}
 	},
-	markdown: {
-		lineNumbers: true
-	},
 	head: [
 		['link', {
 			rel: 'icon',
-			href: '/favicon.ico'
+			href: '/logo.ico'
 		}]
 	],
+	markdown: {
+		lineNumbers: true
+	},
 	themeConfig: {
 		nav: [{
 				text: 'Home',
@@ -37,6 +37,7 @@ module.exports = {
 				title: '开发指南',
 				collapsable: false,
 				children: [
+					'views/guide/introduce.md',
 					'views/guide/install.md',
 					'views/guide/started.md',
 					'views/guide/commonjs.md'

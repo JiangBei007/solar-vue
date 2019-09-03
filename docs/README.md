@@ -1,9 +1,9 @@
 ---
 home: true
 navbar: false
-heroImage: 
-actionText: Let's get started →
-actionLink: views/guide/install
+heroImage: /112.png
+actionText: ← 开始 →
+actionLink: views/guide/introduce
 features:
 - title: rain-misty
   details: A UI Library Based on Vue.
@@ -14,4 +14,7 @@ features:
 footer: This product comes from Jiangbei
 ---
 <ClientOnly>
+::: tip
+vue > 2
+:::
 </ClientOnly>

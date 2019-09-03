@@ -1,5 +1,5 @@
 ---
-title: 'view'
+title: '功能'
 sidebarDepth: 2
 ---
 ## Tree 组件

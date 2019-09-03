@@ -1,5 +1,5 @@
 ---
-title: 'Basic'
+title: '基本'
 sidebarDepth: 2
 ---
 ## Icon

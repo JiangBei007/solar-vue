@@ -1,0 +1,81 @@
+#app{
+	.page{
+		padding-left:10rem;
+	}
+	@media (max-width: 719px){
+		.page {
+		    padding-left: 0;
+		}
+	}
+	@media (max-width: 419px){
+		.theme-default-content:not(.custom){
+			padding-left:0;
+			padding-right :0;
+		}
+	}
+	.theme-default-content:not(.custom){
+		max-width :80%;
+	}
+	.navbar{
+		background: #001938;
+	}
+	.site-name{
+		color #fff;
+	}
+	.nav-links a{
+		color #fff;
+	}
+	.links{
+		background: #001938;
+	}
+	.sidebar{
+		width :13rem;
+		.nav-links{
+			background: #001938;
+		}
+	}
+	
+	a.sidebar-link.active{
+		color:#1989fa;
+		border-left-color:#1989fa;
+	}
+	a.sidebar-link:hover{
+		color:#1989fa;
+	}
+	a.prev{
+		color:#1989fa;
+	}
+	.next a{
+		color:#1989fa;
+	}
+	.Search:focus{
+		outline none;
+	}
+	.home-link{
+		background:url(https://raw.githubusercontent.com/atJiangBei/images/master/1.png) no-repeat left center;
+		background-size:30px; 
+		padding-left:50px;
+	}
+	.action-button{
+		background-color: #0691C0;
+	}
+}
+
+.sidebar::-webkit-scrollbar {
+	width:6px;
+	height:6px;
+}
+.sidebar::-webkit-scrollbar-track{
+  background: rgb(239, 239, 239);
+  border-radius:2px;
+}
+.sidebar::-webkit-scrollbar-thumb{
+  background: #bfbfbf;
+  border-radius:10px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover{
+  background: #333;
+}
+.sidebar::-webkit-scrollbar-corner{
+  background: #179a16;
+}
