@@ -1,23 +1,29 @@
 <template>
-	<rm-card>
-		<rm-body>
-			<div class="s-toast">
-				<rm-toast :type="type" v-model="show">{{ message }}</rm-toast>
-				<div class="vui-title">成功提示</div>
-				<div class="vui-button" @click="toast('success','成功')">success</div>
-				<div class="vui-title">失败提示</div>
-				<div class="vui-button" @click="toast('cancel','失败')">cancel</div>
-				<div class="vui-title">文字提示</div>
-				<div class="vui-button" @click="toast('text','这是一行文字')">text</div>
-				<div class="vui-title">全局调用</div>
-				<div class="vui-button" @click="toastpublin('')">text调用</div>
-				<div class="vui-button" @click="toastpublin('success')">success</div>
+	<div>
+		<layout-card>
+			<div>
+				<layout-column title="代码演示" tips="查看源代码" @handle="codeshow=true"></layout-column>
+			<rm-body>
+				<div class="s-toast">
+					<rm-toast :type="type" v-model="codeshow">{{ message }}</rm-toast>
+					<div class="vui-title">成功提示</div>
+					<div class="vui-button" @click="toast('success','成功')">success</div>
+					<div class="vui-title">失败提示</div>
+					<div class="vui-button" @click="toast('cancel','失败')">cancel</div>
+					<div class="vui-title">文字提示</div>
+					<div class="vui-button" @click="toast('text','这是一行文字')">text</div>
+					<div class="vui-title">全局调用</div>
+					<div class="vui-button" @click="toastpublin('')">text调用</div>
+					<p></p>
+					<div class="vui-button" @click="toastpublin('success')">success</div>
+				</div>
+			</rm-body>
 			</div>
-		</rm-body>
-		<template v-slot:code>
-			<pre v-highlightjs><code class="vue">{{code}}</code></pre>
-		</template>
-	</rm-card>
+		</layout-card>
+		<layout-code title="搜索" v-model="show">
+				<pre v-highlightjs><code class="vue">{{ code }}</code></pre>
+		</layout-code>
+	</div>
 </template>
 
 <script>
@@ -34,6 +40,7 @@ export default {
 	},
 	data() {
 		return {
+			codeshow:false,
 			show: false,
 			type: '',
 			message:"",

@@ -7,7 +7,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name rm src/index.js",
-    "build:modern": "vue-cli-service build --modern",
+    "build:modern": "vue-cli-service build --modern --dest docs/.vuepress/public/dist",
     "test:unit": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
@@ -42,6 +42,7 @@
     "@vue/cli-plugin-unit-mocha": "^3.6.0",
     "@vue/cli-service": "^3.6.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
     "chai": "^4.1.2",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",

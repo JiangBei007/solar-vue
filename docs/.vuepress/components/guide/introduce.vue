@@ -18,14 +18,16 @@
 	.introduce-card {
 		width: 700px;
 		max-width: 100%;
-		box-shadow: 0 0 5px #f0f3f6;
+		box-shadow: 0 0 5px #f0f0f0;
 		color: #34495e;
+		transition:all .3s;
 		.logo-hover{
 			display: none;
 		}
 	}
 	.introduce-card:hover {
-		box-shadow: 0 0 10px #f0f0f0;
+		box-shadow: 0 0 10px #ccc;
+		transition:all .3s;
 		color: #1989fa;
 		.logo-default{
 			display: none;

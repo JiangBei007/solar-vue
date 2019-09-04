@@ -1,7 +1,7 @@
 ---
 home: true
 navbar: false
-heroImage: /112.png
+heroImage: /111.png
 actionText: ← 开始 →
 actionLink: views/guide/introduce
 features:

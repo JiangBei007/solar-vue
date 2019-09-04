@@ -1,45 +1,50 @@
 <template>
-	<rm-card>
-		<rm-body>
-			<div class="s-input">
-				<div class="vui-title">简单示例，只能输入10个字符</div>
-				<rm-input title="只能输入10个字符：" v-model="val1" :max="10"  placeholder="只能输入10个字符" type="text"></rm-input>
-				<div class="vui-title">type="tel" 验证电话号码</div>
-				<rm-input title="电话号码：" v-model="val2" type="tel" :regexp="regexp" :isReturn="return1" placeholder="请输入电话号码" @change="change2"></rm-input>
-				<div class="vui-result">
-					<span>验证结果：</span>
-					<p>{{ JSON.stringify(return1) }}</p>
-				</div>
-				<div class="vui-title">type="tel" 验证身份证号</div>
-				<rm-input title="身份证号：" v-model="val3" type="id" placeholder="请输入身份证号" :regexp="regexpid" :isReturn="return2"></rm-input>
-				<div class="vui-result">
-					<span>验证结果：</span>
-					<p>{{ JSON.stringify(return2) }}</p>
-				</div>
-				<div class="vui-title">type="id"身份证号的年龄校验（0-180岁）</div>
-				<rm-input
-					title="身份证号："
-					v-model="val4"
-					type="id"
-					:regexp="regexpid"
-					:isReturn="return3"
-					:maxage="180"
-					:minage="0"
-					placeholder="请输入身份证号"
-					align="right"
-					:warn="true"
-					:getAge="getAge"
-				></rm-input>
-				<div class="vui-result">
-					<span>验证结果：</span>
-					<p>{{ JSON.stringify(return3) }}</p>
-				</div>
+	<div>
+		<layout-card>
+			<div>
+				<layout-column title="代码演示" tips="查看源代码" @handle="show = true"></layout-column>
+				<rm-body>
+					<div class="s-input">
+						<div class="vui-title">简单示例，只能输入10个字符</div>
+						<rm-input title="只能输入10个字符：" v-model="val1" :max="10" placeholder="只能输入10个字符" type="text"></rm-input>
+						<div class="vui-title">type="tel" 验证电话号码</div>
+						<rm-input title="电话号码：" v-model="val2" type="tel" :regexp="regexp" :isReturn="return1" placeholder="请输入电话号码" @change="change2"></rm-input>
+						<div class="vui-result">
+							<span>验证结果：</span>
+							<p>{{ JSON.stringify(return1) }}</p>
+						</div>
+						<div class="vui-title">type="tel" 验证身份证号</div>
+						<rm-input title="身份证号：" v-model="val3" type="id" placeholder="请输入身份证号" :regexp="regexpid" :isReturn="return2"></rm-input>
+						<div class="vui-result">
+							<span>验证结果：</span>
+							<p>{{ JSON.stringify(return2) }}</p>
+						</div>
+						<div class="vui-title">type="id"身份证号的年龄校验（0-180岁）</div>
+						<rm-input
+							title="身份证号："
+							v-model="val4"
+							type="id"
+							:regexp="regexpid"
+							:isReturn="return3"
+							:maxage="180"
+							:minage="0"
+							placeholder="请输入身份证号"
+							align="right"
+							:warn="true"
+							:getAge="getAge"
+						></rm-input>
+						<div class="vui-result">
+							<span>验证结果：</span>
+							<p>{{ JSON.stringify(return3) }}</p>
+						</div>
+					</div>
+				</rm-body>
 			</div>
-		</rm-body>
-		<template v-slot:code>
+		</layout-card>
+		<layout-code title="搜索" v-model="show">
 			<pre v-highlightjs><code class="vue">{{ code }}</code></pre>
-		</template>
-	</rm-card>
+		</layout-code>
+	</div>
 </template>
 
 <script>
@@ -63,6 +68,7 @@ export default {
 	},
 	data() {
 		return {
+			show: false,
 			val1: '',
 			val2: '',
 			val3: '',

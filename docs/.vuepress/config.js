@@ -55,5 +55,9 @@ module.exports = {
 				]
 			},
 		]
-	}
+	},
+	globalUIComponents: [
+	    'layout-simulator'
+	],
+	plugins: ['@vuepress/nprogress']
 }

@@ -13,7 +13,6 @@ export default {
 
 <style>
 .vui-body {
-	width: 375px;
 	height: 600px;
 	border-radius: 5px;
 	border-bottom: 1px solid #ccc;

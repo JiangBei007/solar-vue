@@ -2,7 +2,12 @@
 title: '表单'
 sidebarDepth: 2
 ---
-## Input 输入框
+## search
+<ClientOnly>
+  <rm-search/>
+</ClientOnly>
+
+## input
 <ClientOnly>
   <rm-input/>
 <font size=5>Attributes</font>
@@ -30,7 +35,7 @@ sidebarDepth: 2
 | clear| 点击清除按钮触发 | 回调函数|
 </ClientOnly>
 
-## select 选择器
+## select
 <ClientOnly>
   <rm-select/>
 <font size=5>Attributes</font>
