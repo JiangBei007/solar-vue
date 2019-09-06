@@ -2,7 +2,12 @@
 title: '反馈'
 sidebarDepth: 2
 ---
-## loading 组件
+## picker
+<ClientOnly>
+  <rm-picker/>
+</ClientOnly>
+
+## loading
 <ClientOnly>
   <rm-loading/>
 <font size=5>Attributes</font>
@@ -12,7 +17,7 @@ sidebarDepth: 2
 | icon | loading样式 | string | spot-spotcolor-circle(可以为空) | '' |
 </ClientOnly>
 
-## Toast 组件
+## toast
 <ClientOnly>
   <rm-toast/>
 <font size=5>Attributes</font>

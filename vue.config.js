@@ -8,6 +8,15 @@ function resolve(dir) {
 module.exports = {
 	outputDir: 'dist',
 	publicPath: './',
+	  pages: {
+	    index: {
+	      entry: 'src/main.js',
+	      template: 'src/index.html',
+	      filename: 'index.html',
+	      title: 'Index Page',
+	      chunks: ['chunk-vendors', 'chunk-common', 'index']
+	    }
+	  },
 	devServer: {
 		port: 8000,
 		proxy: {

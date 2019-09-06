@@ -24,9 +24,9 @@ export default {
 			default: ''
 		}
 	},
-	methods:{
-		close(){
-			this.$emit("input",false)
+	methods: {
+		close() {
+			this.$emit('input', false)
 		}
 	}
 }
@@ -51,14 +51,16 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index:10000;
+	z-index: 10000;
 	.layout-code-container {
 		max-height: 100%;
 		max-width: 100%;
 		height: 80%;
 		width: 80%;
-		display:flex;
+		display: flex;
 		flex-direction: column;
+		padding-bottom: 10px;
+		background:#fff;
 		.layout-code-head {
 			padding: 16px 24px;
 			border-bottom: 1px solid #e8e8e8;
@@ -67,7 +69,7 @@ export default {
 			background: #fff;
 			display: flex;
 			justify-content: space-between;
-			i{
+			i {
 				display: block;
 				height: 16px;
 				width: 16px;

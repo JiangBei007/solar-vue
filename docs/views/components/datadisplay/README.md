@@ -2,7 +2,7 @@
 title: '展示'
 sidebarDepth: 2
 ---
-## Swiper 组件
+## swiper
 <ClientOnly>
   <rm-swiper/>
 <font size=5>Attributes</font>

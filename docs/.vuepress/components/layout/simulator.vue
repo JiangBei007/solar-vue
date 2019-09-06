@@ -1,13 +1,14 @@
 <template>
-	<div class="layout-simulator"><iframe :src="url"></iframe></div>
+	<div class="layout-simulator" v-show="ifrboolean"><iframe :src="url"></iframe></div>
 </template>
 
 <script>
 export default {
 	watch:{
 		'$route'(nvl){
-			console.log(nvl.fullPath)
-			//this.hash = nvl.replace('#','')
+			if(nvl.fullPath !== '/'){
+				this.hash = nvl.hash.replace('#','')
+			}
 		}
 	},
 	computed:{
@@ -17,8 +18,9 @@ export default {
 	},
 	data(){
 		return{
+			ifrboolean:true,
 			src:'/dist/index.html#/',
-			hash:'input'
+			hash:''
 		}
 	}
 }
@@ -30,12 +32,13 @@ export default {
 	min-width: 320px;
 	position: fixed;
 	right: 20px;
-	top: 70px;
+	top: 0px;
+	bottom: 0;
+	margin: auto;
 	height: 520px;
 	overflow: hidden;
 	background: #fafafa;
 	border-radius: 6px;
-	box-shadow: #ebedf0 0 4px 12px;
 	iframe {
 		border: none;
 		height: 100%;

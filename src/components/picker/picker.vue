@@ -1,7 +1,5 @@
 <template>
-	<div class="misty-picker">
-		<div v-for="(current, i) in currentData" :key="i" :id="'misty-picker-' + i"></div>
-	</div>
+	<div class="misty-picker"><div v-for="(current, i) in currentData" :key="i" :id="'misty-picker-' + mid + i"></div></div>
 </template>
 
 <script>
@@ -9,22 +7,21 @@ import Scroll from './index'
 const getData = (value, data) => {
 	for (let i = 0; i < data.length; i++) {
 		if (data[i].value === value) {
-			if(data[i]&&data[i].children){
+			if (data[i] && data[i].children) {
 				return data[i].children
-			}else{
+			} else {
 				return []
 			}
 		}
 	}
-	if(data[0]&&data[0].children){
+	if (data[0] && data[0].children) {
 		return data[0].children
-	}else{
+	} else {
 		return []
 	}
-	
 }
 export default {
-	name:"rmPicker",
+	name: 'rmPicker',
 	model: {
 		prop: 'values',
 		event: 'change'
@@ -49,6 +46,9 @@ export default {
 		}
 	},
 	mounted() {
+		this.mid = Math.random()
+			.toString(36)
+			.substring(3, 8)
 		this.initCurrentData(this.values, this.list)
 	},
 	methods: {
@@ -65,7 +65,7 @@ export default {
 			}
 			if (index !== undefined) {
 				this.setValues(index)
-			} else if(values.length===0){
+			} else if (values.length === 0) {
 				this.setValues()
 			}
 			this.$emit('change', this.values)
@@ -78,7 +78,7 @@ export default {
 			this.$nextTick(() => {
 				const currentData = this.currentData
 				for (let i = 0; i < currentData.length; i++) {
-					const root = document.getElementById('misty-picker-' + i)
+					const root = document.getElementById('misty-picker-' + this.mid + i)
 					root.innerHTML = ''
 					new Scroll(root, {
 						data: currentData[i],
@@ -116,7 +116,7 @@ export default {
 	display: flex;
 }
 
-.misty-picker> div {
+.misty-picker > div {
 	flex: 1;
 }
 .misty-picker-scroller-component {

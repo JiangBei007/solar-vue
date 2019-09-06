@@ -1,18 +1,20 @@
 <template>
-	<transition name="MistyToastFade">
-		<div class="misty-toast" v-show="show" v-stop>
-			<div class="misty-toast-all">
-				<template v-if="type === 'success' || type === 'cancel' || type === 'text'">
-					<div>
-						<i :class="ipStyle" v-if="!(type === 'text')"></i>
-						<p :class="ipStyle">
-							<slot>{{ text }}</slot>
-						</p>
-					</div>
-				</template>
+	<div style="display: table;">
+		<transition name="MistyToastFade">
+			<div class="misty-toast" v-show="show" v-stop>
+				<div class="misty-toast-all">
+					<template v-if="type === 'success' || type === 'cancel' || type === 'text'">
+						<div>
+							<i :class="ipStyle" v-if="!(type === 'text')"></i>
+							<p :class="ipStyle">
+								<slot>{{ text }}</slot>
+							</p>
+						</div>
+					</template>
+				</div>
 			</div>
-		</div>
-	</transition>
+		</transition>
+	</div>
 </template>
 
 <script>
@@ -48,8 +50,8 @@ export default {
 	},
 	props: {
 		value: {
-			type:Boolean,
-			default:false
+			type: Boolean,
+			default: false
 		},
 		type: {
 			type: String,
@@ -105,6 +107,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	font-size: 16px;
+	display: table;
 }
 .misty-toast .misty-toast-all {
 	position: absolute;
