@@ -1,5 +1,5 @@
 <template>
-	<div class="layout-simulator" v-show="ifrboolean"><iframe :src="url"></iframe></div>
+	<section class="layout-simulator" v-show="ifrboolean"><iframe :src="url"></iframe></section>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
 	data(){
 		return{
 			ifrboolean:true,
-			src:'/dist/index.html#/',
+			src:'/mobile/index.html#/',
 			hash:''
 		}
 	}
@@ -30,15 +30,16 @@ export default {
 .layout-simulator {
 	width: 320px;
 	min-width: 320px;
-	position: fixed;
-	right: 20px;
-	top: 0px;
-	bottom: 0;
-	margin: auto;
-	height: 520px;
+	position: absolute;
+	right: 50%;
+	margin-right: -160px;
+	top: 50%;
+	margin-top: -280px;
+	height: 560px;
 	overflow: hidden;
-	background: #fafafa;
 	border-radius: 6px;
+	z-index:10;
+	background: #f5f5f9;
 	iframe {
 		border: none;
 		height: 100%;

@@ -18,9 +18,6 @@ import 'highlight.js/styles/atom-one-dark.css'
 Vue.use(VueHighlightJS)
 export default {
 	name: 'm-toast',
-	components: {
-		RmToast
-	},
 	data() {
 		return {
 			codeshow:false,

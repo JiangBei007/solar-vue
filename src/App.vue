@@ -1,56 +1,102 @@
 <template>
-  <div class="app">
-	<router-view></router-view>
-  </div>
+	<div class="app">
+		<div class="nav-bar">
+			<div>
+				<img src="./static/images/bac.png" />
+				<span class="nav-bar-date">{{ date }}</span>
+			</div>
+			<div class="nav-bar-url">
+				<div>{{ url }}</div>
+			</div>
+		</div>
+		<router-view></router-view>
+	</div>
 </template>
 <script>
-import Vue from 'vue'
+import { getNetworkType } from './until/getBom'
 export default {
-  data () {
-    return {
-      index:0,
-      index1:0,
-      index2:5,
-      index3:1,
-    }
-  },
-  computed: {
-
-  },
-  methods:{
-  	slide(index){
-  	},
-  	slide1(index){
-  	},
-  	slide2(index){
-  	},
-  	slideTo(index){
-  		this.index2 = index;
-  	},
-  	slide3(index){
-  	},
-  }
+	data() {
+		return {
+			currheight: window.innerHeight,
+			currwidth: window.innerWidth,
+			url: window.location.href
+		}
+	},
+	watch:{
+		'$route'(){
+			this.url = window.location.href 
+		}
+	},
+	computed: {
+		date() {
+			const date = new Date()
+			return date.getHours() + ':' + date.getMinutes()
+		},
+		workType() {
+			return getNetworkType()
+		}
+	},
+	methods: {}
 }
 </script>
-<style>
- ::-webkit-scrollbar {
- 	width:6px;
- 	height:6px;
- }
- ::-webkit-scrollbar-track{
-   background: rgb(239, 239, 239);
-   border-radius:2px;
- }
- ::-webkit-scrollbar-thumb{
-   background: #bfbfbf;
-   border-radius:10px;
- }
- ::-webkit-scrollbar-thumb:hover{
-   background: #333;
- }
- ::-webkit-scrollbar-corner{
-   background: #179a16;
- }
+<style lang="scss">
+::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+::-webkit-scrollbar-track {
+	background: rgb(239, 239, 239);
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+	background: #bfbfbf;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #333;
+}
+::-webkit-scrollbar-corner {
+	background: #179a16;
+}
+#app {
+	display: flex;
+	flex-direction: column;
+}
+.nav-bar {
+	padding: 10px;
+	padding-bottom: 0;
+	background: #3f3f3f;
+	img {
+		margin: 2px 0;
+		width: 100%;
+	}
+	.nav-bar-date {
+		position: absolute;
+		top: 10px;
+		right: 50%;
+		margin-right: -14px;
+		font-size: 14px;
+		color: #fff;
+	}
+	.nav-bar-url {
+		height: 40px;
+		> div {
+			font-size: 14px;
+			height: 28px;
+			line-height: 28px;
+			color: #fff;
+			background-color: #a2a2a2;
+			margin: 0 auto;
+			border-radius: 4px;
+			white-space: nowrap;
+			overflow-x: scroll;
+		}
+		> div::-webkit-scrollbar {
+			width: 0px;
+			height: 0px;
+		}
+	}
+}
 .vui-body {
 	width: 375px;
 	height: 600px;
@@ -114,4 +160,3 @@ export default {
 	min-width: 100px;
 }
 </style>
-

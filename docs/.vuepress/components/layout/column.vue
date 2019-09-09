@@ -41,6 +41,7 @@ export default {
 	.column-container-icon {
 		display: flex;
 		align-items: center;
+		cursor:pointer;
 	}
 	i {
 		display: block;

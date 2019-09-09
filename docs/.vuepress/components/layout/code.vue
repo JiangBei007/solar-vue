@@ -60,7 +60,7 @@ export default {
 		display: flex;
 		flex-direction: column;
 		padding-bottom: 10px;
-		background:#fff;
+		background: #fff;
 		.layout-code-head {
 			padding: 16px 24px;
 			border-bottom: 1px solid #e8e8e8;
@@ -69,6 +69,7 @@ export default {
 			background: #fff;
 			display: flex;
 			justify-content: space-between;
+			cursor: pointer;
 			i {
 				display: block;
 				height: 16px;

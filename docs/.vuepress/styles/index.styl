@@ -12,22 +12,39 @@
    border-radius:10px;
  }
  ::-webkit-scrollbar-thumb:hover{
-   background: #333;
+   background: #001938;
  }
  ::-webkit-scrollbar-corner{
    background: #179a16;
  }
 #app{
-	.theme-container{
-		padding-right 350px;
+	@media (max-width: 2000px){
+		.theme-container{
+			padding-right 400px;
+		}
+		.global-ui{
+			width :400px;
+		}
+	}
+	@media (max-width: 1600px){
+		.theme-container{
+			padding-right 350px;
+		}
+		.global-ui{
+			width :350px;
+		}
 	}
 	.global-ui{
+		position: fixed;
+		right:0;
+		top: 0;
+		height:100%;
 	}
 	.page{
 		padding-left:13rem;
 	}
 	.theme-default-content:not(.custom){
-		max-width: 540px;
+		max-width: 90%;
 	}
 	@media (max-width: 719px){
 		.page {
@@ -40,9 +57,16 @@
 			padding-right :0;
 		}
 	}
-
+	.sidebar-links{
+		>li{
+			>.active.sidebar-link{
+				background #e6f7ff;
+			}
+		}
+	}
 	.navbar{
 		background: #001938;
+		border:none;
 	}
 	.site-name{
 		color #fff;
@@ -59,25 +83,8 @@
 			background: #001938;
 		}
 	}
-	
-	a.sidebar-link.active{
-		color:#1989fa;
-		border-left-color:#1989fa;
-	}
-	a.sidebar-link:hover{
-		color:#1989fa;
-	}
-	a.prev{
-		color:#1989fa;
-	}
-	.next a{
-		color:#1989fa;
-	}
-	.Search:focus{
-		outline none;
-	}
 	.home-link{
-		background:url(https://raw.githubusercontent.com/atJiangBei/images/master/1.png) no-repeat left center;
+		background:url(/120.png) no-repeat left center;
 		background-size:30px; 
 		padding-left:50px;
 	}
