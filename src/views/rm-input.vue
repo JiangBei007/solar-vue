@@ -39,6 +39,8 @@
 import { getAge } from './../until/common'
 
 export default {
+	tags:'Form 组件',
+	label: 'input',
 	path: 'input',
 	created() {
 		const telReg = /^[1][3,4,5,7,8][0-9]{9}$/

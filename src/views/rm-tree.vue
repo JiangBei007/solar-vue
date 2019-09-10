@@ -6,6 +6,8 @@
 
 <script>
 export default {
+	tags:'功能组件',
+	label: 'tree',
 	path: 'tree',
 	data() {
 		return {

@@ -58,9 +58,10 @@ export default {
 ::-webkit-scrollbar-corner {
 	background: #179a16;
 }
-#app {
+.app {
 	display: flex;
 	flex-direction: column;
+	background: #f5f5f9;
 }
 .nav-bar {
 	padding: 10px;

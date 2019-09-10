@@ -38,6 +38,8 @@
 
 <script>
 export default {
+	tags:'Form 组件',
+	label: 'select',
 	path: 'select',
 	data() {
 		return {

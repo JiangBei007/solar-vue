@@ -20,6 +20,8 @@ const changeFn = data => {
 const data = window.__addressChildren__
 changeFn(data)
 export default {
+	tags:'Form 组件',
+	label: 'picker',
 	path: 'picker',
 	data() {
 		return {

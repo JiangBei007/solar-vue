@@ -75,6 +75,8 @@
 
 <script>
 export default {
+	tags:'功能组件',
+	label: 'swiper',
 	path: 'swiper',
 	data() {
 		return {

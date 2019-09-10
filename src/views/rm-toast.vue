@@ -21,6 +21,8 @@
 <script>
 
 export default {
+	tags:'反馈组件',
+	label: 'toast',
 	path: 'toast',
 	data() {
 		return {

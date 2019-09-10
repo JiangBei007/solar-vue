@@ -13,6 +13,8 @@
 
 <script>
 export default {
+	tags:'反馈组件',
+	label: 'loading',
 	path: 'loading',
 	data() {
 		return {
