@@ -1,0 +1,7 @@
+@import './../mixins/var.scss';
+div {
+  input {
+    border-color: $border-color;
+    outline: none;
+  }
+}
