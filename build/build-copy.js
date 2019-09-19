@@ -5,7 +5,7 @@ const path = require('path')
 const libDir = path.join(__dirname, '../lib')
 const srcDir = path.join(__dirname, '../ceshi')
 const isDir = dir => fs.lstatSync(dir).isDirectory()
-const isFile = /\.(css|scss|sass|js)$/
+const isFile = /\.(css|scss|sass|less|js|jsx|ts|tsx)$/
 fs.emptyDirSync(libDir)
 fs.copySync(srcDir, libDir)
 const files = fs.readdirSync(libDir)

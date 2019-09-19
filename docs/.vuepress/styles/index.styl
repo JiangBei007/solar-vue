@@ -17,6 +17,11 @@
  ::-webkit-scrollbar-corner{
    background: #179a16;
  }
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
 #app{
 	@media (max-width: 2000px){
 		.theme-container{
@@ -65,8 +70,11 @@
 		}
 	}
 	.navbar{
-		background: #001938;
+		background: $header-bg;
 		border:none;
+		.links{
+			background: $header-bg;
+		}
 	}
 	.site-name{
 		color #fff;
@@ -74,22 +82,31 @@
 	.nav-links a{
 		color #fff;
 	}
-	.links{
-		background: #001938;
-	}
+	
 	.sidebar{
 		width :13rem;
 		.nav-links{
-			background: #001938;
+			background: $header-bg;
 		}
 	}
 	.home-link{
-		background:url(/120.png) no-repeat left center;
+		background:url(/images/logo120.png) no-repeat left center;
 		background-size:30px; 
 		padding-left:50px;
 	}
 	.action-button{
-		background-color: #0691C0;
+		background-color: $home-btn-bg;
 	}
+	.theme-default-content:not(.custom) > h1,
+	 .theme-default-content:not(.custom) > h2,
+	  .theme-default-content:not(.custom) > h3,
+	   .theme-default-content:not(.custom) > h4,
+	    .theme-default-content:not(.custom) > h5,
+		 .theme-default-content:not(.custom) > h6{
+			 margin-top:0;
+		 }
 }
 
+.file-blank{
+	height:30px;
+}

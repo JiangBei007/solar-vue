@@ -1,7 +1,7 @@
 module.exports = function(api) {
   const { BABEL_MODULE, NODE_ENV } = process.env
   const useESModules = BABEL_MODULE !== 'commonjs' && NODE_ENV !== 'test'
-  api && api.cache(false)
+  api && api.cache(true)
 
   return {
     presets: [
@@ -9,10 +9,17 @@ module.exports = function(api) {
       [
         '@babel/preset-env',
         {
-          loose: true,
+          loose: false,
           modules: useESModules ? false : 'commonjs'
         }
-      ]
+      ],
+      [
+        '@vue/babel-preset-jsx',
+        {
+          functional: false
+        }
+      ],
+      '@babel/preset-typescript'
     ],
     plugins: [
       [

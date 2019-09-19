@@ -2,9 +2,11 @@
 title: '展示'
 sidebarDepth: 2
 ---
+
 ## swiper
+
 <ClientOnly>
-  <rm-swiper/>
+  <sv-swiper/>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |

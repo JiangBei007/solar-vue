@@ -1,7 +1,7 @@
 var path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 var webpack = require('webpack')
-const componentNames = ['button', 'input', 'picker']
+const componentNames = ['button', 'input', 'icon']
 const components = {}
 componentNames.forEach(
   name =>

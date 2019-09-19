@@ -1,15 +1,18 @@
 ---
-title: '表单'
+title: '表单组件'
 sidebarDepth: 2
 ---
-## search
+
+## Search
+
 <ClientOnly>
-  <rm-search/>
+  <sv-search/>
 </ClientOnly>
 
 ## input
+
 <ClientOnly>
-  <rm-input/>
+  <sv-input/>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
@@ -29,15 +32,16 @@ sidebarDepth: 2
 | max|最大长度| Number | - |  |
 
 <font size=5>Events</font>
-| 事件名称| 说明 | 回调参数 | 
+| 事件名称| 说明 | 回调参数 |
 | :------ | ------ | ------ |
-| change| value值改变触发 | 回调函数 |
+| change| value 值改变触发 | 回调函数 |
 | clear| 点击清除按钮触发 | 回调函数|
 </ClientOnly>
 
 ## select
+
 <ClientOnly>
-  <rm-select/>
+  <sv-select/>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
@@ -49,10 +53,8 @@ sidebarDepth: 2
 | value-map |设置键值对映射用以自动转换接口数据, 如 ['value', 'label'] | array | - | ['key','value'] |
 
 <font size=5>Events</font>
-| 事件名称| 说明 | 回调参数 | 
+| 事件名称| 说明 | 回调参数 |
 | :------ | ------ | ------ |
-| change| value值改变触发 | 回调函数 |
+| change| value 值改变触发 | 回调函数 |
 
 </ClientOnly>
-
-
