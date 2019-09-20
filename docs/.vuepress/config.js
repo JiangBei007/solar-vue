@@ -23,6 +23,13 @@ module.exports = {
         type: 'text/javascript',
         src: '/js/jwmeyy.js'
       }
+    ],
+    [
+      'script',
+      {
+        type: 'text/javascript',
+        src:'/js/qrcode.min.js'
+      }
     ]
   ],
   markdown: {

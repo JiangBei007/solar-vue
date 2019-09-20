@@ -42,7 +42,7 @@ export default {
 <style lang="scss">
 .code-fade-enter-active,
 .code-fade-leave-active {
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 .code-fade-enter,
 .code-fade-leave-to {
