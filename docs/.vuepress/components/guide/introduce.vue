@@ -6,7 +6,7 @@
       </div>
       <div class="introduce-text-one">
         <div class="home-logo">
-          <img src="../../public/images/logo120.png" class="logo-default" />
+          <img src="../../public/images/logo200.png" class="logo-default" />
         </div>
         <h2>solar-vue</h2>
         <div class="home-text">轻量的，可靠的，人性化的</div>

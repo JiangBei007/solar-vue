@@ -4,7 +4,6 @@ export default {
   },
   mutations: {
     changeRoute(state, payload) {
-      console.log(payload)
       state.route = payload
     }
   },

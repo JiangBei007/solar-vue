@@ -14,7 +14,7 @@ module.exports = {
       'link',
       {
         rel: 'icon',
-        href: '/logo.ico'
+        href: '/images/logo.ico'
       }
     ],
     [
@@ -28,7 +28,7 @@ module.exports = {
       'script',
       {
         type: 'text/javascript',
-        src:'/js/qrcode.min.js'
+        src: '/js/qrcode.min.js'
       }
     ]
   ],

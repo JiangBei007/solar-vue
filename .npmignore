@@ -5,3 +5,9 @@ node_modules
 note
 src
 test
+components
+build
+.prettierrc
+.babel.config.js
+postcss.config.js
+vue.config.js
