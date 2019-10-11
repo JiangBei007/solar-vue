@@ -1,0 +1,27 @@
+@import './../style/var.less';
+@import './../style/base.less';
+.sv-loading {
+  display: inline-block;
+  font-size: @base-text-size;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.sv-loading-vertical {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .sv-loading-message {
+    margin-top: @base-margin;
+    margin-left: 0;
+  }
+}
+.sv-loading-icon {
+  animation: sv-rotate 0.8s linear infinite;
+}
+.sv-loading-message {
+  margin-left: @base-margin;
+  color: @icon-color;
+}

@@ -1,6 +1,8 @@
-import Icon from './icon/index.js'
+import Icon from './icon/index'
+import Loading from './loading/index'
+import Button from './button/index'
 //exports.icon = Icon
-const components = [Icon]
+const components = [Icon, Loading, Button]
 const install = function install(Vue) {
   components.forEach(function(Component) {
     Vue.component(Component.name, Component)
@@ -9,6 +11,8 @@ const install = function install(Vue) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
+
+export { Icon, Loading, Button }
 
 export default {
   install

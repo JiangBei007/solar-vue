@@ -1,3 +1,6 @@
+/**
+ * gaojingwei 2019/09
+ */
 const fs = require('fs-extra')
 const glob = require('fast-glob')
 const path = require('path')

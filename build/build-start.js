@@ -1,9 +1,12 @@
+/**
+ * gaojingwei 2019/09
+ */
 const fs = require('fs-extra')
 const glob = require('fast-glob')
 const path = require('path')
 
 const libDir = path.join(__dirname, '../lib')
-const srcDir = path.join(__dirname, '../ceshi')
+const srcDir = path.join(__dirname, '../components')
 const isDir = dir => fs.lstatSync(dir).isDirectory()
 const isFile = /\.(css|scss|sass|less|js|jsx|ts|tsx)$/
 fs.emptyDirSync(libDir)

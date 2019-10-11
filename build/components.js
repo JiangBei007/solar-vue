@@ -1,3 +1,6 @@
+/**
+ * gaojingwei 2019/09
+ */
 const path = require('path')
 const fs = require('fs')
 const resolve = function(RelativePath) {
@@ -11,15 +14,16 @@ const excludes = [
   'utils',
   'directives'
 ]
+const fileFolder = 'components'
 const componentNames = fs
-  .readdirSync(resolve('../components'))
+  .readdirSync(resolve(`../${fileFolder}`))
   .filter(dirName => !excludes.includes(dirName))
 const components = {}
 componentNames.forEach(
   name =>
     (components[name] = path.join(
       __dirname,
-      './../ceshi/' + name + '/index.js'
+      `./../${fileFolder}/${name}/index.js`
     ))
 )
 module.exports = components

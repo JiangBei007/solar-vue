@@ -16,7 +16,7 @@
     "lint": "eslint --ext .js,.vue src",
     "fix": "eslint --fix --ext .js,.vue src --fix",
     "build:lib": "node build/build-lib.js",
-    "ceshi": "webpack --config build/webpack-build.js"
+    "ceshi": "webpack --config build/webpack-build-sv.js"
   },
   "repository": {
     "type": "git",
@@ -73,7 +73,8 @@
     "vuepress": "^1.0.3",
     "vuex": "^3.1.1",
     "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.8"
+    "webpack-cli": "^3.3.8",
+    "webpack-merge": "^4.2.2"
   },
   "browserslist": [
     "> 1%",

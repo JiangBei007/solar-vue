@@ -1,15 +1,10 @@
+/**
+ * gaojingwei 2019/09
+ */
 var path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 var webpack = require('webpack')
-const componentNames = ['button', 'input', 'icon']
-const components = {}
-componentNames.forEach(
-  name =>
-    (components[name] = path.join(
-      __dirname,
-      './../ceshi/' + name + '/index.js'
-    ))
-)
+const components = require('./components')
 module.exports = {
   entry: components,
   output: {
