@@ -59,12 +59,10 @@ export default {
     if (!plain && type === 'default') {
       style.color = 'inherit'
     }
-    if (color) {
-      if (colorTest.test(color)) {
-        style.background = color
-        style.color = '#fff'
-        style.borderWidth = '0px'
-      }
+    if (color && colorTest.test(color) && !plain) {
+      style.background = color
+      style.color = '#fff'
+      style.borderWidth = '0px'
     }
 
     const children = [

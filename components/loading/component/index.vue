@@ -1,5 +1,5 @@
 <script>
-import Icon from './../../icon'
+import Icon from 'SolarVue/icon'
 export default {
   name: 'SvLoading',
   props: {

@@ -1,0 +1,54 @@
+@import './../style/var.less';
+@import './../style/base.less';
+.sv-popup {
+  position: relative;
+}
+.sv-popup-mask {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: @zindex-popup-msak;
+}
+.sv-popup-content {
+  position: fixed;
+  background: #fff;
+  z-index: @zindex-popup;
+}
+.sv-popup-center {
+  padding: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.sv-popup-bottom,
+.sv-popup-top {
+  width: 100%;
+  height: 20%;
+  min-height: 20%;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sv-popup-top {
+  top: 0;
+}
+.sv-popup-bottom {
+  bottom: 0;
+}
+
+.sv-popup-left,
+.sv-popup-right {
+  min-width: 20%;
+  width: 20%;
+  height: 100%;
+  top: 0;
+}
+.sv-popup-left {
+  left: 0;
+}
+.sv-popup-right {
+  right: 0;
+}

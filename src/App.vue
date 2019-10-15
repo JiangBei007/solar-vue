@@ -147,4 +147,13 @@ export default {
   color: rgba(69, 90, 100, 0.6);
   background: #f8f8f8;
 }
+.demo-container {
+  background: #fff;
+  margin: 5px;
+  padding: 10px;
+}
+.demo-example-margin {
+  margin: 8px 8px 0 0;
+  display: inline-block;
+}
 </style>

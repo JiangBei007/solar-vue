@@ -11,7 +11,7 @@ export default {
     color: String
   },
   render(createElement) {
-    const { color, size } = this
+    const { color, size, name } = this
     let fontSize = null
     if (size) {
       fontSize = typeof size === 'string' ? size : size + 'px'
@@ -20,10 +20,10 @@ export default {
     return createElement(this.tag, {
       class: {
         'sv-iconfont': true,
-        ['sv-icon-' + this.name]: true
+        ['sv-icon-' + name]: true
       },
       style: {
-        color: this.color,
+        color: color,
         fontSize: fontSize
       }
     })

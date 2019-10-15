@@ -1,0 +1,29 @@
+@import './../style/var.less';
+@import './../style/base.less';
+.sv-notify {
+  box-sizing: border-box;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  text-align: center;
+  word-wrap: break-word;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: @zindex-message;
+  color: @white;
+}
+.sv-notify-primary {
+  background: @blue;
+}
+.sv-notify-success {
+  background: @green;
+}
+.sv-notify-danger {
+  background: @red;
+}
+.sv-notify-warning {
+  background: @orange;
+}

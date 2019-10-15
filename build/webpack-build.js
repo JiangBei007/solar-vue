@@ -3,26 +3,32 @@
  */
 var path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-var webpack = require('webpack')
 const components = require('./components')
 module.exports = {
   entry: components,
   output: {
     path: path.resolve(__dirname, './../lib'),
-    filename: '[name]/index.js',
-    library: 'sv',
-    libraryTarget: 'umd'
+    filename: '[name]/index.js'
   },
-  devtool: '#eval-source-map',
+  devtool: 'none',
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js'
+      SolarVue: path.resolve(__dirname, '../components')
     },
-    extensions: ['.js', '.vue']
+    extensions: ['.js', '.vue', 'jsx', 'ts', 'tsx']
   },
   mode: 'production',
   performance: {
     hints: false
+  },
+  externals: {
+    'SolarVue/icon': 'SolarVue/icon',
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    }
   },
   module: {
     rules: [
@@ -32,12 +38,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
-            env: {
-              test: {
-                plugins: ['istanbul']
-              }
-            }
+            presets: ['@babel/preset-env']
           }
         }
       },

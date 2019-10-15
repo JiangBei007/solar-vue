@@ -33,7 +33,11 @@
     <div class="demo-title">自定义颜色</div>
     <div class="demo-button-container">
       <sv-button type="primary" color="rgb(114, 50, 221)">常规按钮</sv-button>
-      <sv-button type="danger" plain color="#ff976a">常规按钮</sv-button>
+      <sv-button
+        type="danger"
+        plain
+        color="linear-gradient(to right, rgb(75, 176, 255), rgb(97, 73, 246))"
+      >常规按钮</sv-button>
       <sv-button
         type="info"
         color="linear-gradient(to right, rgb(75, 176, 255), rgb(97, 73, 246))"
@@ -52,6 +56,7 @@
         position="right"
         color="rgb(114, 50, 221)"
       >图标居右</sv-button>
+      <sv-button type="danger" size="small" icon="message">有消息了</sv-button>
     </div>
   </div>
 </template>
