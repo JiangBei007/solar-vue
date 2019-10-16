@@ -9,63 +9,73 @@ export default {
     },
     type: {
       type: String,
-      default: 'LightCircle',
+      default: 'circle',
       validator(value) {
-        return ['HalfCircle', 'LightCircle'].includes(value)
+        return ['spot', 'circle'].includes(value)
       }
     },
-    size: {
-      type: [String, Number],
-      default: 30
-    },
+    size: [String, Number],
     TextSize: [String, Number],
     vertical: {
       type: Boolean,
       default: false
-    }
+    },
+    color: String
   },
   data() {
     return {}
   },
-  render(createElement) {
+  render(h) {
     const { color, type, size, TextSize, vertical } = this
     let fontSize = null
     if (TextSize) {
       fontSize = typeof TextSize === 'string' ? TextSize : TextSize + 'px'
     }
-    let name = ''
-    if (type === 'HalfCircle') {
-      name = 'load'
+    const iconStyle = {
+      color: color
     }
-    if (type === 'LightCircle') {
-      name = 'loading'
-    }
-    const SvIcon = createElement(Icon, {
-      props: {
-        name: name,
-        size: size,
-        color: color
+    const SvIcon = function() {
+      if (type === 'spot') {
+        return (
+          <span class="sv-spin-spot">
+            <i class="sv-spin-spot-item"></i>
+            <i class="sv-spin-spot-item"></i>
+            <i class="sv-spin-spot-item"></i>
+            <i class="sv-spin-spot-item"></i>
+          </span>
+        )
       }
-    })
-    return createElement(
+      return (
+        <span class="sv-loading-spiner">
+          <svg class="sv-loading__circular" viewBox="25 25 50 50">
+            <circle cx="50" cy="50" r="20" fill="none" />
+          </svg>
+        </span>
+      )
+    }
+    return h(
       'div',
       {
         class: {
           'sv-loading': true,
           'sv-loading-vertical': vertical
+        },
+        style: {
+          fontSize: typeof size === 'string' ? size : size + 'px'
         }
       },
       [
-        createElement(
+        h(
           'span',
           {
             class: {
               'sv-loading-icon': true
-            }
+            },
+            style: iconStyle
           },
-          [SvIcon]
+          [SvIcon()]
         ),
-        createElement(
+        h(
           'span',
           {
             class: {

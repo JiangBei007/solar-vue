@@ -3,22 +3,22 @@
     <div class="demo-title">基本用法</div>
     <div class="demo-container">
       <div class="demo-example-margin">
-        <sv-button @click.native="test">弹出窗口</sv-button>
+        <sv-button @click.native="test" type="info">弹出窗口</sv-button>
       </div>
     </div>
     <div class="demo-title">不同方向</div>
     <div class="demo-container">
       <div class="demo-example-margin">
-        <sv-button @click.native="test1">下方弹出</sv-button>
+        <sv-button @click.native="test1" type="info">下方弹出</sv-button>
       </div>
       <div class="demo-example-margin">
-        <sv-button @click.native="test2">上方弹出</sv-button>
+        <sv-button @click.native="test2" type="info">上方弹出</sv-button>
       </div>
       <div class="demo-example-margin">
-        <sv-button @click.native="test3">左方弹出</sv-button>
+        <sv-button @click.native="test3" type="info">左方弹出</sv-button>
       </div>
       <div class="demo-example-margin">
-        <sv-button @click.native="test4">右方弹出</sv-button>
+        <sv-button @click.native="test4" type="info">右方弹出</sv-button>
       </div>
     </div>
     <div class="demo-title">去除遮罩</div>

@@ -11,7 +11,7 @@
   border-radius: @switch-node-size;
   transition: background-color @switch-transition-duration;
 
-  &__node {
+  &-node {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@
     transition: @switch-transition-duration;
   }
 
-  &__loading {
+  &-loading {
     top: 25%;
     left: 25%;
     width: 50%;
@@ -32,15 +32,15 @@
     line-height: 1;
   }
 
-  &--on {
+  &-on {
     background-color: @switch-on-background-color;
 
-    .van-switch__node {
+    .sv-switch-node {
       transform: translateX(@switch-width - @switch-node-size);
     }
   }
 
-  &--disabled {
+  &-disabled {
     opacity: @switch-disabled-opacity;
   }
 }

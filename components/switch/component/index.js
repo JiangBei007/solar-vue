@@ -1,26 +1,59 @@
 export default {
   name: 'SvSwitch',
   props: {
-    value: false
+    value: false,
+    size: {
+      type: [Number, String],
+      default: '30px'
+    },
+    disabled: Boolean,
+    activeColor: String,
+    inactiveColor: String,
+    activeValue: {
+      default: true
+    },
+    inactiveValue: {
+      default: false
+    },
+    confirm: Function
   },
   render(h) {
-    this.onClick = value => {
-      this.$emit('input', !value)
-      this.$emit('change', !value)
-      console.log(value)
+    const {
+      value,
+      size,
+      disabled,
+      activeColor,
+      inactiveColor,
+      activeValue,
+      inactiveValue,
+      confirm
+    } = this
+    const checked = value === activeValue
+    const fontSize = typeof size === 'string' ? size : parseFloat(size) + 'px'
+    const switchStyle = {
+      fontSize: fontSize,
+      backgroundColor: checked ? activeColor : inactiveColor
     }
-    const { value } = this
-    const on = value ? 'sv-switch-on' : ''
+    const on = checked ? 'sv-switch-on' : ''
+    const dis = disabled ? 'sv-switch-disabled' : ''
+    this.onClick = () => {
+      if (confirm && !confirm(checked)) return
+      if (!disabled) {
+        const newValue = checked ? inactiveValue : activeValue
+        this.$emit('input', newValue)
+        this.$emit('change', newValue)
+      }
+    }
+
     return (
       <div
-        class={`sv-switch ${on}`}
+        class={`sv-switch ${on} ${dis}`}
         role="switch"
         aria-checked={value}
-        onClick={e => {
-          this.onClick(value)
-        }}
+        style={switchStyle}
+        onClick={this.onClick}
       >
-        <div class={`sv-switch ${on}`} />
+        <div class="sv-switch-node" />
       </div>
     )
   }
