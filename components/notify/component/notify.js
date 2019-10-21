@@ -21,15 +21,6 @@ export default {
     color: String,
     icon: String
   },
-  data() {
-    return {}
-  },
-  methods: {
-    close() {
-      this.$emit('change', false)
-      this.$emit('close')
-    }
-  },
   render(h) {
     const { value, message, type, color, background, icon } = this
     return (

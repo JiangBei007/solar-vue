@@ -1,5 +1,3 @@
-<script>
-import Icon from 'SolarVue/icon'
 export default {
   name: 'SvLoading',
   props: {
@@ -19,8 +17,7 @@ export default {
     vertical: {
       type: Boolean,
       default: false
-    },
-    color: String
+    }
   },
   data() {
     return {}
@@ -38,10 +35,10 @@ export default {
       if (type === 'spot') {
         return (
           <span class="sv-spin-spot">
-            <i class="sv-spin-spot-item"></i>
-            <i class="sv-spin-spot-item"></i>
-            <i class="sv-spin-spot-item"></i>
-            <i class="sv-spin-spot-item"></i>
+            <i class="sv-spin-spot-item" />
+            <i class="sv-spin-spot-item" />
+            <i class="sv-spin-spot-item" />
+            <i class="sv-spin-spot-item" />
           </span>
         )
       }
@@ -91,4 +88,3 @@ export default {
     )
   }
 }
-</script>

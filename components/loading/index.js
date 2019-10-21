@@ -1,4 +1,4 @@
-import Loading from './component/index.vue'
+import Loading from './component/index'
 Loading.install = function(Vue) {
   Vue.component(Loading.name, Loading)
 }

@@ -6,7 +6,7 @@
 
 <script></script>
 
-<style lang="scss">
+<style lang="less">
 .layout-card {
   box-shadow: 0 0 5px #f0f0f0;
   transition: all 0.3s;

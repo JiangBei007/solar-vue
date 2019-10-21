@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .layout-simulator {
   width: 320px;
   min-width: 320px;

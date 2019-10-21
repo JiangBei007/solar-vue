@@ -1,5 +1,5 @@
 <script>
-import Icon from './../../icon'
+import Icon from './../../icon/index'
 export default {
   name: 'SvButton',
   props: {

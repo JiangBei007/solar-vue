@@ -1,4 +1,4 @@
-import Button from './component/index.vue'
+import Button from './component/index'
 Button.install = function(Vue) {
   Vue.component(Button.name, Button)
 }

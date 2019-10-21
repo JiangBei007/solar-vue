@@ -26,4 +26,5 @@ componentNames.forEach(
       `./../${fileFolder}/${name}/index.js`
     ))
 )
+
 module.exports = components

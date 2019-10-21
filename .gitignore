@@ -5,4 +5,5 @@ note/
 test/
 ceshi/
 lib/
+coverage/
 package-lock.json

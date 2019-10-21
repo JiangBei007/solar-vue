@@ -326,7 +326,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .introduce {
   position: relative;
   .introduce-bg {

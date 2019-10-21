@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .sv-demo-hd {
   padding-left: 16px;
   color: rgba(0, 0, 0, 0.75);

@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="less">
 .code-fade-enter-active,
 .code-fade-leave-active {
   transition: all 0.3s;

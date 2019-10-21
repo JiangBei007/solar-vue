@@ -5,8 +5,7 @@ export function mount(Component, data) {
     props: Component.props,
     render(h) {
       return h(Component, {
-        props: this.$props,
-        ...data
+        props: this.$props
       })
     }
   })
