@@ -1,0 +1,54 @@
+/*
+gaojingweo 2019/9
+*/
+@import './../style/var.less';
+@import './../style/base.less';
+.sv-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  box-sizing: content-box;
+  width: 96px;
+  max-width: 70%;
+  min-height: 90px;
+  padding: 16px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: pre-wrap;
+  text-align: center;
+  word-wrap: break-word;
+  background-color: rgba(50, 50, 51, 0.88);
+  border-radius: 4px;
+  transform: translate3d(-50%, -50%, 0);
+}
+.sv-toast-text {
+  padding: 0;
+  min-height: unset;
+  width: fit-content;
+  min-width: 96px;
+  .sv-toast-message {
+    margin-top: 0;
+    padding: 8px 12px;
+  }
+}
+.sv-toast-hasicon {
+  .sv-toast-message {
+    padding: 0;
+    margin-top: 8px;
+  }
+}
+
+.sv-toast-icon {
+  font-size: 32px;
+  line-height: 32px;
+  .sv-spin-spot-item {
+    background-color: #fff;
+  }
+}

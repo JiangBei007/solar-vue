@@ -68,8 +68,8 @@ module.exports = {
         collapsable: false,
         children: [
           'views/components/basic/',
-          'views/components/form/',
           'views/components/feedback/',
+          'views/components/form/',
           'views/components/datadisplay/',
           'views/components/other/'
         ]

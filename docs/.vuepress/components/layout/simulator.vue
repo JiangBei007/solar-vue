@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       ifrboolean: true,
-      src: '/mobile/index.html#/',
+      src: '/ui/mobile/index.html#/',
       hash: ''
     }
   }

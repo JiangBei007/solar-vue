@@ -42,7 +42,7 @@
     <sv-popup v-model="value4" position="right">
       <div class="demo-p-box"></div>
     </sv-popup>
-    <sv-popup v-model="value5" position="top" :overlay="false">
+    <sv-popup v-model="value5" position="bottom" :overlay="false">
       <div class="demo-p-box"></div>
     </sv-popup>
   </div>
@@ -97,9 +97,3 @@ export default {
   }
 }
 </script>
-<style lang="less">
-.demo-popup {
-  .demo-popup-container {
-  }
-}
-</style>

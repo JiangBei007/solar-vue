@@ -8,7 +8,8 @@ module.exports = {
   entry: components,
   output: {
     path: path.resolve(__dirname, './../lib'),
-    filename: '[name]/index.js'
+    filename: '[name]/index.js',
+    libraryTarget: 'umd'
   },
   devtool: 'none',
   resolve: {

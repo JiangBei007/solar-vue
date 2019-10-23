@@ -38,7 +38,7 @@
 import { mapMutations } from 'vuex'
 import Vue from 'vue'
 const route = {
-  tags: '基础组件',
+  tags: '反馈组件',
   label: 'notify',
   path: 'notify'
 }

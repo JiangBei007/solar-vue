@@ -76,7 +76,7 @@ export default {
           'span',
           {
             class: {
-              'sv-loading-message': true
+              'sv-loading-message': !!this.$slots.default
             },
             style: {
               fontSize: fontSize

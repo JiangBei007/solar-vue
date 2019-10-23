@@ -3,31 +3,84 @@ title: '反馈'
 sidebarDepth: 2
 ---
 
-## picker
-
-<ClientOnly>
-  <sv-picker/>
-</ClientOnly>
-
-## loading
-
-<ClientOnly>
-  <sv-loading/>
-<font size=5>Attributes</font>
-| 参数| 说明 | 类型 | 可选值 | 默认值 |
-| :------ | ------ | ------ | ------ | ------ |
-| show | 加载图标是否展现 | boolean | - | false |
-| icon | loading样式 | string | spot-spotcolor-circle(可以为空) | '' |
-</ClientOnly>
-
 ## toast
 
 <ClientOnly>
-  <sv-toast/>
+<sv-toast/>
+</ClientOnly>
+
+```javascript
+import { Toast } from 'solar-vue'
+Vue.component(Toast.name, Toast)
+/*
+or
+Vue.use(Icon)
+*/
+
+//*.vue
+this.$toast({
+  type: 'loading',
+  loadingType: 'circle',
+  message: '加载中'
+})
+```
+
+```vue
+<template>
+  <sv-toast v-model="value">很高兴看到你</sv-toast>
+</template>
+<script>
+export default { components: { [Toast.name]: Toast } }
+</script>
+```
+
+<ClientOnly>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
 | value| v-model绑定,弹框出现 | boolean |- | false |
-| type | 弹框类型 | string | success-warn-cancel-text | success |
-| time | 弹框出现多少毫秒后消失(单位毫秒) | number | - | 2000 |
+| type | 弹框类型 | string | loading-icon | success |
+| loadingType | loading类型 | string | - | - |
+| icon | icon类型 | string | - | - |
+| message | 文字内容 | string | - | - |
+| duration | 弹框出现的时长 | number | - | 2000 |
+</ClientOnly>
+
+## notify
+
+<ClientOnly>
+<sv-notify/>
+</ClientOnly>
+
+```javascript
+import { Toast } from 'solar-vue'
+Vue.use(Icon)
+
+//*.vue
+
+this.$notify({
+  message: '通知消息',
+  type: 'success',
+  background: '#551A8B',
+  color: '#D33682'
+})
+```
+
+<ClientOnly>
+<font size=5>Attributes</font>
+| 参数| 说明 | 类型 | 可选值 | 默认值 |
+| :------ | ------ | ------ | ------ | ------ |
+| type | 弹框类型 | string | primary-success-danger-warning | success |
+| loadingType | loading类型 | string | - | - |
+| icon | icon类型 | string | - | - |
+| message | 文字内容 | string | - | - |
+| duration | 弹框出现的时长 | number | - | 2000 |
+| background | 背景色 | string | - | - |
+| color | 字体色 | string | - | - |
+</ClientOnly>
+
+## picker
+
+<ClientOnly>
+  <sv-picker/>
 </ClientOnly>

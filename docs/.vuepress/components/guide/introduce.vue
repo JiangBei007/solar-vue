@@ -317,7 +317,7 @@ export default {
       var effect = new Effect(renderer, scene, camera, cvs)
       effect.animate()
       effect.setFunction(planeFunctions['sin(sqrt(x^2+z^2))'])
-      effect.toggleRotate('x')
+      effect.toggleRotate('y')
 
       F3.TIME.start()
     }
