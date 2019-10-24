@@ -1,13 +1,12 @@
-.vscode
-.cache
 docs
 node_modules
-note
 src
-test
 components
 build
+coverage
 .prettierrc
-.babel.config.js
+babel.config.js
 postcss.config.js
 vue.config.js
+jest.config.js
+deploy.sh

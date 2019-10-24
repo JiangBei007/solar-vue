@@ -33,7 +33,7 @@ export default {
   },
   data() {
     return {
-      prefix: 'http://jiangbei.online/solarui/mobile/index.html#/'
+      prefix: 'http://jiangbei.online/solar-vue/mobile/index.html#/'
     }
   },
   mounted() {

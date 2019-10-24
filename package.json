@@ -2,7 +2,7 @@
   "name": "solar-vue",
   "version": "0.0.1",
   "private": false,
-  "main": "dist/rm.umd.min.js",
+  "main": "lib/SolarVue",
   "description": "vue-ui",
   "scripts": {
     "serve": "vue-cli-service serve",
