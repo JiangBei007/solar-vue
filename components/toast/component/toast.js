@@ -53,7 +53,7 @@ export default {
     const { value, message, type, icon, loadingType } = this
     const hasLoading = type === 'loading'
     const hasIcon = (type === 'icon' && icon) || hasLoading
-    function ToastIcon() {
+    const ToastIcon = function() {
       if (type === 'icon' && icon) {
         return <Icon name={icon} />
       }
