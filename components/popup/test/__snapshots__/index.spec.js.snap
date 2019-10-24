@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders correctly 1`] = `
+<div
+  class="sv-popup"
+>
+  <!---->
+  <!---->
+</div>
+`;

@@ -2,7 +2,7 @@
   <div>
     <layout-card>
       <div>
-        <layout-column title="扫码体验" tips="查看源代码" url="https://www.baidu.com" @handle="show = true"></layout-column>
+        <layout-column title="扫码体验" tips="查看源代码" url="popup" @handle="show = true"></layout-column>
       </div>
     </layout-card>
     <div class="file-blank"></div>

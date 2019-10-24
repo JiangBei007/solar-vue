@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <div class="nav-bar">
+    <div class="nav-bar" v-if="!isMobile">
       <div>
         <div class="nav-bar-bg">
           <img src="./static/images/header-bac.png" />
@@ -14,6 +14,7 @@
     <div class="nav-demo-name" v-if="$route.path!=='/'">
       <img src="./static/images/home-icon.png" @click.prevent="goHome" />
       <i>|</i>
+
       <span>{{ route.label }}</span>
     </div>
     <router-view></router-view>
@@ -21,7 +22,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import { getNetworkType } from './until/getBom'
+import { getNetworkType, isMobile } from './until/getBom'
 export default {
   data() {
     return {
@@ -39,6 +40,9 @@ export default {
     },
     workType() {
       return getNetworkType()
+    },
+    isMobile() {
+      return isMobile()
     }
   },
   methods: {

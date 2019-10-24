@@ -2,7 +2,7 @@
   <div>
     <layout-card>
       <div>
-        <layout-column title="代码演示" tips="查看源代码" @handle="show = true"></layout-column>
+        <layout-column title="代码演示" url="loading" tips="查看源代码" @handle="show = true"></layout-column>
       </div>
     </layout-card>
     <div class="file-blank"></div>

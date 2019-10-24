@@ -31,12 +31,17 @@ export default {
       default: 'http://'
     }
   },
+  data() {
+    return {
+      prefix: 'http://jiangbei.online/solarui/mobile/index.html#/'
+    }
+  },
   mounted() {
     const root = this.$refs['qrcode']
     new QRCode(root, {
       width: 100,
       height: 100
-    }).makeCode(this.url)
+    }).makeCode(this.prefix + this.url)
   },
   methods: {
     handle() {

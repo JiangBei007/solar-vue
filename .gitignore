@@ -1,9 +1,6 @@
 node_modules/
-.cache/
-/dist/
-note/
-test/
-ceshi/
 lib/
 coverage/
+docs/.vuepress/dist/
+docs/.vuepress/public/mobile/
 package-lock.json

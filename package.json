@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "solar-vue",
   "version": "0.0.1",
   "private": false,
   "main": "dist/rm.umd.min.js",
@@ -16,12 +16,11 @@
     "lint": "eslint --ext .js,.vue src",
     "fix": "eslint --fix --ext .js,.vue src --fix",
     "build:lib": "node build/build-lib.js",
-    "ceshi": "webpack --config build/webpack-build-sv.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atJiangBei/ui.git"
+    "url": "git+https://github.com/atJiangBei/solar-vue.git"
   },
   "keywords": [
     "UI",
@@ -30,9 +29,9 @@
   "author": "jiangbei",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atJiangBei/ui/issues"
+    "url": "https://github.com/atJiangBei/solar-vue/issues"
   },
-  "homepage": "https://github.com/atJiangBei/ui#readme",
+  "homepage": "https://github.com/atJiangBei/solar-vue#readme",
   "dependencies": {
     "small-swiper": "^1.0.7",
     "vue": "^2.6.10"

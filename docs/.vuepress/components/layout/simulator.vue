@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       ifrboolean: true,
-      src: '/ui/mobile/index.html#/',
+      src: '/solar-vue/mobile/index.html#/',
       hash: ''
     }
   }

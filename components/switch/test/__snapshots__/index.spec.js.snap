@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders correctly 1`] = `
+<div
+  class="sv-switch  "
+  role="switch"
+  style="font-size: 30px;"
+>
+  <div
+    class="sv-switch-node"
+  />
+</div>
+`;

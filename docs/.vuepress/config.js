@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/ui/',
+  base: '/solar-vue/',
   title: 'solar-vue',
   description: "I'm glad to see you.",
   configureWebpack: {
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         text: 'Github',
-        link: 'https://github.com/atJiangBei/ui/'
+        link: 'https://github.com/atJiangBei/solar-vue/'
       },
       {
         text: '博客',
