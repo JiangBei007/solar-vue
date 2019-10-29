@@ -24,7 +24,10 @@
   },
   "keywords": [
     "UI",
-    "vue"
+    "ui",
+    "A Component Library for Vue.js",
+    "Vue",
+    "vue.js"
   ],
   "author": "jiangbei",
   "license": "MIT",
@@ -33,7 +36,7 @@
   },
   "homepage": "https://github.com/atJiangBei/solar-vue#readme",
   "dependencies": {
-    "small-swiper": "^1.0.7",
+    "small-swiper": "^1.0.9",
     "vue": "^2.6.10"
   },
   "devDependencies": {

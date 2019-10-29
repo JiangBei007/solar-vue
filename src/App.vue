@@ -160,4 +160,9 @@ export default {
   margin: 8px 8px 0 0;
   display: inline-block;
 }
+.demo-btn-container {
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+}
 </style>

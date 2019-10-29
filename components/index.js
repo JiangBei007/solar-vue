@@ -8,8 +8,9 @@ import Popup from './popup/index'
 import Notify from './notify/index'
 import Switch from './switch/index'
 import Toast from './toast/index'
+import Swiper from './swiper/index'
 //exports.icon = Icon
-const components = [Icon, Loading, Button, Popup, Notify, Switch, Toast]
+const components = [Icon, Loading, Button, Popup, Notify, Switch, Toast, Swiper]
 const install = function install(Vue) {
   components.forEach(function(Component) {
     Vue.component(Component.name, Component)

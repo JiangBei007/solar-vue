@@ -1,0 +1,55 @@
+@import './../style/var.less';
+@import './../style/base.less';
+.sv-swiper {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  background: moccasin;
+  position: relative;
+  cursor: pointer;
+  .sv-swiper-container {
+    height: 100%;
+    width: 100%;
+  }
+  .sv-swiper-lr {
+    display: flex;
+  }
+  .sv-swiper-container > div {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    align-items: center;
+    display: block;
+    width: 100%;
+  }
+  .sv-swiper-pagination {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    span {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      margin: 0 2px;
+      background: rgba(0, 0, 0, 0.3);
+      transition: width 0.3s;
+    }
+    .sv-swiper-active {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      transition: width 0.3s;
+    }
+  }
+}
