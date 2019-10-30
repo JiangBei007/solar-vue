@@ -29,6 +29,12 @@ module.exports = {
       commonjs: 'vue',
       commonjs2: 'vue',
       amd: 'vue'
+    },
+    'small-swiper': {
+      root: 'small-swiper',
+      commonjs: 'small-swiper',
+      commonjs2: 'small-swiper',
+      amd: 'small-swiper'
     }
   },
   module: {

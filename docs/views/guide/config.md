@@ -5,9 +5,6 @@ title: '配置'
 **颜色变量**
 
 ```less
-/*
-gaojingwei 2019/9
-*/
 // Colors
 @black: #000;
 @white: #fff;

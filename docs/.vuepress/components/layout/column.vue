@@ -28,7 +28,7 @@ export default {
     },
     url: {
       type: String,
-      default: 'http://'
+      default: ''
     }
   },
   data() {
@@ -81,6 +81,7 @@ export default {
       padding: 10px;
       background: #fff;
       position: absolute;
+      z-index: 10000;
       top: 30px;
       left: -67px;
       transform: scale(0);

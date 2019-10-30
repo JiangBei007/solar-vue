@@ -16,10 +16,16 @@
     <div class="introduce-card">
       <h3>特性</h3>
       <ul>
-        <li class="tips-list-item">00+的实用组件：满足移动端的基本开发</li>
+        <li class="tips-list-item">30+的实用组件：满足移动端的基本开发</li>
         <li class="tips-list-item">统一的视觉规范：保证了应用的项目内部、项目之间都能保持高度的视觉一致性</li>
         <li class="tips-list-item">适用于多场景的产生：提供按需加载能力，使用灵活，避免引入无用代码</li>
       </ul>
+    </div>
+    <div class="file-blank"></div>
+    <div class="introduce-card">
+      <div>
+        <layout-column title="扫码体验"></layout-column>
+      </div>
     </div>
     <div class="file-blank"></div>
     <div class="introduce-card">
@@ -352,6 +358,9 @@ export default {
     transition: all 0.3s;
     padding: 10px;
     position: relative;
+    .column-container {
+      border: none;
+    }
   }
   .introduce-card:hover {
     box-shadow: 0 0 10px #ccc;

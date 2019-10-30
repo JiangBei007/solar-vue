@@ -13,16 +13,16 @@
       >
         <template slot="sv-swiper-slot">
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_2.png" />
+            <img src="http://jiangbei.online/images/swiper1.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_3.png" />
+            <img src="http://jiangbei.online/images/swiper2.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_4.png" />
+            <img src="http://jiangbei.online/images/swiper3.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_6.png" />
+            <img src="http://jiangbei.online/images/swiper4.jpg" />
           </div>
         </template>
       </sv-swiper>
@@ -40,16 +40,16 @@
       >
         <template slot="sv-swiper-slot">
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_2.png" />
+            <img src="http://jiangbei.online/images/swiper1.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_3.png" />
+            <img src="http://jiangbei.online/images/swiper2.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_4.png" />
+            <img src="http://jiangbei.online/images/swiper3.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_6.png" />
+            <img src="http://jiangbei.online/images/swiper4.jpg" />
           </div>
         </template>
       </sv-swiper>
@@ -86,16 +86,16 @@
       >
         <template slot="sv-swiper-slot">
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_2.png" />
+            <img src="http://jiangbei.online/images/swiper1.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_3.png" />
+            <img src="http://jiangbei.online/images/swiper2.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_4.png" />
+            <img src="http://jiangbei.online/images/swiper3.jpg" />
           </div>
           <div>
-            <img src="https://static.zhongan.com/website/tech/img/index/case_bg_qu_6.png" />
+            <img src="http://jiangbei.online/images/swiper4.jpg" />
           </div>
         </template>
       </sv-swiper>
@@ -143,10 +143,10 @@ export default {
       index3: 1,
       index4: 0,
       imgList: [
-        'https://static.zhongan.com/website/tech/img/index/case_bg_qu_2.png',
-        'https://static.zhongan.com/website/tech/img/index/case_bg_qu_3.png',
-        'https://static.zhongan.com/website/tech/img/index/case_bg_qu_4.png',
-        'https://static.zhongan.com/website/tech/img/index/case_bg_qu_6.png'
+        'http://jiangbei.online/images/swiper1.jpg',
+        'http://jiangbei.online/images/swiper2.jpg',
+        'http://jiangbei.online/images/swiper3.jpg',
+        'http://jiangbei.online/images/swiper4.jpg'
       ],
       flag: true
     }
@@ -181,9 +181,7 @@ export default {
     add() {
       this.flag = false
       setTimeout(() => {
-        this.imgList.push(
-          'https://static.zhongan.com/website/factoryOnline/assets/images/index/pro9.png'
-        )
+        this.imgList.push('http://jiangbei.online/images/swiper5.jpg')
         this.flag = true
       }, 100)
     }

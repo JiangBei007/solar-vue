@@ -1,9 +1,9 @@
 {
   "name": "solar-vue",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
-  "main": "lib/SolarVue",
-  "description": "vue-ui",
+  "main": "lib/SolarVue.js",
+  "description": "vue ui , A Component Library for Vue.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name rm src/index.js",
