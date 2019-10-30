@@ -30,6 +30,13 @@ module.exports = {
         type: 'text/javascript',
         src: '/js/qrcode.min.js'
       }
+    ],
+    [
+      'script',
+      {
+        type: 'text/javascript',
+        src: '/js/index.js'
+      }
     ]
   ],
   markdown: {
