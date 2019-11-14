@@ -9,8 +9,23 @@ import Notify from './notify/index'
 import Switch from './switch/index'
 import Toast from './toast/index'
 import Swiper from './swiper/index'
+import SwiperItem from './swiper-item/index'
+import Tab from './tab/index'
+import TabItem from './tab-item/index'
 //exports.icon = Icon
-const components = [Icon, Loading, Button, Popup, Notify, Switch, Toast, Swiper]
+const components = [
+  Icon,
+  Loading,
+  Button,
+  Popup,
+  Notify,
+  Switch,
+  Toast,
+  Swiper,
+  SwiperItem,
+  Tab,
+  TabItem
+]
 const install = function install(Vue) {
   components.forEach(function(Component) {
     Vue.component(Component.name, Component)
@@ -20,7 +35,19 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 
-export { Icon, Loading, Button, Popup, Notify, Switch }
+export {
+  Icon,
+  Loading,
+  Button,
+  Popup,
+  Notify,
+  Switch,
+  Toast,
+  Swiper,
+  SwiperItem,
+  Tab,
+  TabItem
+}
 
 export default {
   install

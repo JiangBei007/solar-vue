@@ -11,20 +11,18 @@
         direction="horizontal"
         :pagination="true"
       >
-        <template slot="sv-swiper-slot">
-          <div>
-            <img src="http://jiangbei.online/images/swiper1.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper2.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper3.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper4.jpg" />
-          </div>
-        </template>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper1.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper2.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper3.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper4.jpg" />
+        </sv-swiper-item>
       </sv-swiper>
     </div>
     <div class="demo-title">垂直方向循环</div>
@@ -38,28 +36,31 @@
         direction="vertical"
         :pagination="true"
       >
-        <template slot="sv-swiper-slot">
-          <div>
-            <img src="http://jiangbei.online/images/swiper1.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper2.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper3.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper4.jpg" />
-          </div>
-        </template>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper1.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper2.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper3.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper4.jpg" />
+        </sv-swiper-item>
       </sv-swiper>
     </div>
     <div class="demo-title">手动切换的文字型左右轮播</div>
     <div class="demo-container">
-      <sv-swiper v-model="index2" @on-slide="slide2" direction="horizontal" :pagination="true">
-        <template slot="sv-swiper-slot">
-          <div v-for="(i, index) in 7" :key="index">{{ index }}</div>
-        </template>
+      <sv-swiper
+        v-model="index2"
+        @on-slide="slide2"
+        direction="horizontal"
+        :pagination="true"
+      >
+        <sv-swiper-item v-for="(i, index) in 7" :key="index">{{
+          index
+        }}</sv-swiper-item>
       </sv-swiper>
       <div class="demo-btn-container">
         <sv-button
@@ -68,8 +69,11 @@
           icon="arrow-right"
           position="right"
           @click.native="slideTo(7)"
-        >下一页</sv-button>
-        <sv-button type="info" size="small" icon="bell">当前页 {{ index2 }}</sv-button>
+          >下一页</sv-button
+        >
+        <sv-button type="info" size="small" icon="bell"
+          >当前页 {{ index2 }}</sv-button
+        >
       </div>
     </div>
 
@@ -84,42 +88,53 @@
         direction="horizontal"
         :pagination="true"
       >
-        <template slot="sv-swiper-slot">
-          <div>
-            <img src="http://jiangbei.online/images/swiper1.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper2.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper3.jpg" />
-          </div>
-          <div>
-            <img src="http://jiangbei.online/images/swiper4.jpg" />
-          </div>
-        </template>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper1.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper2.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper3.jpg" />
+        </sv-swiper-item>
+        <sv-swiper-item>
+          <img src="http://jiangbei.online/images/swiper4.jpg" />
+        </sv-swiper-item>
       </sv-swiper>
     </div>
     <div class="demo-title">
       异步加载
-      <sv-button type="info" size="small" icon="plus" position="right" @click.native="add">Add</sv-button>
+      <sv-button
+        type="info"
+        size="small"
+        icon="plus"
+        position="right"
+        @click.native="add"
+        >Add</sv-button
+      >
+      <sv-button
+        type="info"
+        size="small"
+        icon="plus"
+        position="right"
+        @click.native="deletefn"
+        >delete</sv-button
+      >
     </div>
     <div class="demo-container">
       <div class="demo-swiper-box">
         <sv-swiper
-          v-if="flag&&imgList.length"
           v-model="index4"
           :loop="true"
           :auto="false"
           effect="slide"
           :pagination="true"
+          @on-slide="slide4"
           ref="asyncdom"
         >
-          <template slot="sv-swiper-slot">
-            <div v-for="(img, i) in imgList" :key="i">
-              <img :src="img" />
-            </div>
-          </template>
+          <sv-swiper-item v-for="(img, i) in imgList" :key="i">
+            <img :src="img" />
+          </sv-swiper-item>
         </sv-swiper>
       </div>
     </div>
@@ -147,8 +162,7 @@ export default {
         'http://jiangbei.online/images/swiper2.jpg',
         'http://jiangbei.online/images/swiper3.jpg',
         'http://jiangbei.online/images/swiper4.jpg'
-      ],
-      flag: true
+      ]
     }
   },
   watch: {},
@@ -178,12 +192,14 @@ export default {
     slide3(index) {
       // console.log(index)
     },
+    slide4(index) {
+      //console.log(index)
+    },
     add() {
-      this.flag = false
-      setTimeout(() => {
-        this.imgList.push('http://jiangbei.online/images/swiper5.jpg')
-        this.flag = true
-      }, 100)
+      this.imgList.push('http://jiangbei.online/images/swiper5.jpg')
+    },
+    deletefn() {
+      this.imgList.pop()
     }
   }
 }

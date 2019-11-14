@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div class="nav-demo-name" v-if="$route.path!=='/'">
+    <div class="nav-demo-name" v-if="$route.path !== '/'">
       <img src="./static/images/home-icon.png" @click.prevent="goHome" />
       <i>|</i>
 
@@ -163,6 +163,7 @@ export default {
 .demo-btn-container {
   padding: 10px 24px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 </style>
