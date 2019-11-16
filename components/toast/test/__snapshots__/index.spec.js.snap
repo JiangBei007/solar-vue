@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter renders correctly 1`] = `
+<div
+  style="display: table;"
+>
+  <div
+    class="sv-toast sv-toast-text "
+    name="sv-transition-fade"
+    style="display: none;"
+  >
+    <div
+      class=""
+    />
+    <div
+      class="sv-toast-message"
+    />
+  </div>
+</div>
+`;

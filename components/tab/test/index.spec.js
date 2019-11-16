@@ -12,7 +12,7 @@ describe('Counter', () => {
   const wrapper = mount(Counter)
 
   // it's also easy to check for the existence of elements
-  it('has a button', () => {
-    expect(wrapper.contains('button')).toBe(true)
+  it('has a div', () => {
+    expect(wrapper.contains('div')).toBe(true)
   })
 })

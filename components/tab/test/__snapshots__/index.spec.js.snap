@@ -1,11 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Counter renders correctly 1`] = `
-<button
-  class="sv-button sv-button-default sv-button-normal"
+<div
+  class="sv-tab-wrap"
 >
-  <span
-    style="margin-left: 5px;"
-  />
-</button>
+  <div
+    class="sv-tab-container"
+  >
+    <div
+      class="sv-tab-self"
+    >
+       
+      <div
+        class="sv-tab-ink-bar sv-tab-bar-transition-backward"
+        style="display: block; height: 3px; transition: none;"
+      >
+        <!---->
+      </div>
+    </div>
+  </div>
+</div>
 `;

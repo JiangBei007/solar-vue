@@ -2,14 +2,32 @@
  * gaojingwei 2019/09
  */
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require('path')
 module.exports = {
-  devtool: 'eval',
+  devtool: 'none',
   resolve: {
-    extensions: ['.js', '.vue']
+    alias: {
+      'solar-vue': path.resolve(__dirname, '../components')
+    },
+    extensions: ['.js', '.vue', 'jsx', 'ts', 'tsx']
   },
   mode: 'production',
   performance: {
     hints: false
+  },
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    },
+    'small-swiper': {
+      root: 'small-swiper',
+      commonjs: 'small-swiper',
+      commonjs2: 'small-swiper',
+      amd: 'small-swiper'
+    }
   },
   module: {
     rules: [

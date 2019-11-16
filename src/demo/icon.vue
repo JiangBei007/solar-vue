@@ -3,7 +3,7 @@
     <div class="demo-icon-container">
       <ul>
         <li v-for="icon in icons" :key="icon">
-          <icon :name="icon"></icon>
+          <sv-icon :name="icon"></sv-icon>
           <span>{{ icon }}</span>
         </li>
       </ul>

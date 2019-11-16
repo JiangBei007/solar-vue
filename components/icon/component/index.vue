@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'Icon',
+  name: 'SvIcon',
   props: {
     name: String,
     tag: {

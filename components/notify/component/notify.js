@@ -1,4 +1,4 @@
-import Icon from './../../icon'
+import Icon from 'solar-vue/icon'
 export default {
   props: {
     message: String,

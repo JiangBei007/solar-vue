@@ -3,7 +3,9 @@
  */
 var path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const components = require('./components')
+
+const { externalsComponents, components } = require('./components')
+
 module.exports = {
   entry: components,
   output: {
@@ -14,16 +16,19 @@ module.exports = {
   devtool: 'none',
   resolve: {
     alias: {
-      SolarVue: path.resolve(__dirname, '../components')
+      'solar-vue': path.resolve(__dirname, '../components')
     },
     extensions: ['.js', '.vue', 'jsx', 'ts', 'tsx']
+  },
+  resolveLoader: {
+    modules: ['node_modules', path.resolve(__dirname, './loaders')]
   },
   mode: 'production',
   performance: {
     hints: false
   },
   externals: {
-    'SolarVue/icon': 'SolarVue/icon',
+    ...externalsComponents,
     vue: {
       root: 'Vue',
       commonjs: 'vue',
@@ -42,17 +47,23 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           }
-        }
+        ]
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'vue-loader'
+          }
+        ]
       }
     ]
   },

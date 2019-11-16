@@ -41,12 +41,12 @@ export default {
     }
   },
   mounted() {
-    this.$parent.updateIndex()
+    this.$parent && this.$parent.updateIndex()
   },
   beforeDestroy() {
     const $parent = this.$parent
     this.$nextTick(() => {
-      $parent.updateIndex()
+      $parent && $parent.updateIndex()
     })
   },
   methods: {

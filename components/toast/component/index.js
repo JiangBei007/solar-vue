@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import ToastComponent from './toast'
-import { mount } from './../../utils/vfunction'
-import { removeTypeDuplicates } from '@babel/types'
+import { mount } from 'solar-vue/utils/vfunction'
 function parseOptions(message) {
   return typeof message === 'object' ? message : { message }
 }

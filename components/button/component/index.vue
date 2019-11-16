@@ -1,5 +1,5 @@
 <script>
-import Icon from './../../icon/index'
+import Icon from 'solar-vue/icon'
 export default {
   name: 'SvButton',
   props: {

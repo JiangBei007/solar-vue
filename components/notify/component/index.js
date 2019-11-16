@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import NotifyComponent from './notify'
-import { mount } from './../../utils/vfunction'
+import { mount } from 'solar-vue/utils/vfunction.js'
 function parseOptions(message) {
   return typeof message === 'object' ? message : { message }
 }

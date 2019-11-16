@@ -1,5 +1,5 @@
-import Icon from '../../icon'
-import Loading from '../../loading'
+import Icon from 'solar-vue/icon'
+import Loading from 'solar-vue/loading'
 export default {
   name: 'SvToast',
   props: {

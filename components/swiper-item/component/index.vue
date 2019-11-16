@@ -8,12 +8,12 @@
 export default {
   name: 'sv-swiper-item',
   mounted() {
-    this.$parent.init()
+    this.$parent && this.$parent.init()
   },
   beforeDestroy() {
     const $parent = this.$parent
     this.$nextTick(() => {
-      $parent.reset()
+      $parent && $parent.reset()
     })
   }
 }
