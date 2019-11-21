@@ -1,0 +1,74 @@
+/*
+gaojingweo 2019/11/21
+*/
+@import './../style/var.less';
+
+.sv-write {
+  background: #fff;
+}
+.sv-write-container {
+  padding: 10px 15px;
+  position: relative;
+  line-height: @write-line-height;
+  display: flex;
+  font-size: @label-font;
+}
+.sv-write-required::after {
+  position: absolute;
+  content: '*';
+  font-size: inherit;
+  top: 10px;
+  left: 4px;
+  color: @write-required;
+}
+.sv-write-label {
+  width: 90px;
+}
+.sv-write-body {
+  flex: 1;
+}
+.sv-write-inner {
+  display: flex;
+  align-items: center;
+}
+.sv-write-inner i {
+  display: block;
+  font-size: 16px;
+  color: #9f9f9f;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  margin-left: 5px;
+}
+.sv-write-input {
+  width: 100%;
+  color: @write-text-color;
+  min-height: 0;
+}
+.sv-write-input::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.sv-write-input::-moz-placeholder {
+  color: @write-placeholder-color;
+}
+.sv-write-input:-ms-input-placeholder {
+  color: @write-placeholder-color;
+}
+.sv-write-input::-webkit-input-placeholder {
+  color: @write-placeholder-color;
+}
+.sv-write-err {
+  color: @write-required;
+  font-size: 12px;
+}
+.sv-write-right {
+  text-align: right;
+}
+.sv-write-center {
+  text-align: center;
+}
+.sv-write-left {
+  text-align: left;
+}

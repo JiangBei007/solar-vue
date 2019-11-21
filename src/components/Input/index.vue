@@ -1,15 +1,25 @@
 <template>
-	<div class="misty-input">
-		<div class="misty-input-label">
-			<label :for="textId">{{title}}</label>
-		</div>
-		<div class="misty-input-form">
-			<input :type="nativeType" ref="input" :id="textId" :style="{'text-align':align}" :placeholder="placeholder" @input="valueChange"
-			 v-model="thisValue" @focus="valueFocus" @blur="valueBlur" :maxlength="max" />
-			<i class="misty-input-icon" @click="vulueClear" v-show="iconWarnClear"></i>
-			<i class="misty-input-warn" v-show="verification"></i>
-		</div>
-	</div>
+  <div class="misty-input">
+    <div class="misty-input-label">
+      <label :for="textId">{{title}}</label>
+    </div>
+    <div class="misty-input-form">
+      <input
+        :type="nativeType"
+        ref="input"
+        :id="textId"
+        :style="{'text-align':align}"
+        :placeholder="placeholder"
+        @input="valueChange"
+        v-model="thisValue"
+        @focus="valueFocus"
+        @blur="valueBlur"
+        :maxlength="max"
+      />
+      <i class="misty-input-icon" @click="vulueClear" v-show="iconWarnClear"></i>
+      <i class="misty-input-warn" v-show="verification"></i>
+    </div>
+  </div>
 </template>
 
 <script type="text/javascript" lang="js">
@@ -205,55 +215,59 @@
 </script>
 
 <style>
-	@import url("../../styles/css/reset.css");
+@import url('../../styles/css/reset.css');
 
-	.misty-input {
-		text-align: left;
-		display: flex;
-		padding: 7px;
-		font-size: 14px;
-		background: #fff;
-		color: inherit;
-		border-top: .5px solid #e5e5e5;
-		border-bottom: .5px solid #e5e5e5;
-	}
+.misty-input {
+  text-align: left;
+  display: flex;
+  padding: 7px;
+  font-size: 14px;
+  background: #fff;
+  color: inherit;
+  border-top: 0.5px solid #e5e5e5;
+  border-bottom: 0.5px solid #e5e5e5;
+}
 
-	.misty-input-label label {
-		display: block;
-		width: auto;
-		line-height: 24px;
-		min-height: 24px;
-	}
+.misty-input-label label {
+  display: block;
+  width: auto;
+  line-height: 24px;
+  min-height: 24px;
+}
 
-	.misty-input-form {
-		flex: 1;
-		display: flex;
-		align-items: center;
-	}
+.misty-input-form {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
 
-	.misty-input-form input {
-		display: block;
-		flex: 1;
-		height: 24px;
-		font-size: inherit;
-		color: inherit;
-	}
+.misty-input-form input {
+  display: block;
+  flex: 1;
+  height: 24px;
+  font-size: inherit;
+  color: inherit;
+}
 
-	.misty-input-icon {
-		display: block;
-		height: 16px;
-		width: 16px;
-		border-radius: 50%;
-		background: #fbfbfb url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAByUlEQVRIS61W0VHDMBTTmwC6AUxAmYC6C9ARygSwAe0GdAIYoV0gbjcoE9ANgAkeJ58TEvs5CUd9ly87kq2nJ1swMLz3lwDuAVwlS08Ads65rz4IKU1672cAHgEsBvawBbB2zh2tdRlB3PEzgKeh0yXzL5Goc6IOQQT3AKZ/BK+X8xSuLVtDcAZwk6RNwCNS83OMjXMuSBwIYkEpTWeo6jvdIyIXFquqfgM4iciNMU+p9jUBnUArNoPg8/l86r2fquo+JSG4iMzonqqqjgYJLbyQqP2nsQO64ZoFS0na4PH/DwDsl3RMSLAE8FoQvnFFTRJ0jTsfYYwHEqwA0Pel0SHhIsoyApxL1yQY456Ov0eCk2AziqCteXSdWXhDgkDQK5FRUEqUFb6gb5CoWGQDvO6VEAclC7fIQpFpr8ymBfA6ozJ3FZpxEhqtqio20l1yzKNz7ranoA1Jb6P1RQUAgvCisZqIv7IZefFY6fsbFZEki4ue3hiaCjERmrJeSSli5ljBNQTYybDY6eHiyS6c/5AwINvgGUGUinq/pek64gg7AMv0EdB76avqynBXh0tVDyKyYvZbmygStGsTXxZ0U/10oXP4bYeeLT9rPCQQBU3zLgAAAABJRU5ErkJggg==) no-repeat center;
-		background-size: 100%;
-		margin: 0 5px;
-	}
+.misty-input-icon {
+  display: block;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fbfbfb
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAByUlEQVRIS61W0VHDMBTTmwC6AUxAmYC6C9ARygSwAe0GdAIYoV0gbjcoE9ANgAkeJ58TEvs5CUd9ly87kq2nJ1swMLz3lwDuAVwlS08Ads65rz4IKU1672cAHgEsBvawBbB2zh2tdRlB3PEzgKeh0yXzL5Goc6IOQQT3AKZ/BK+X8xSuLVtDcAZwk6RNwCNS83OMjXMuSBwIYkEpTWeo6jvdIyIXFquqfgM4iciNMU+p9jUBnUArNoPg8/l86r2fquo+JSG4iMzonqqqjgYJLbyQqP2nsQO64ZoFS0na4PH/DwDsl3RMSLAE8FoQvnFFTRJ0jTsfYYwHEqwA0Pel0SHhIsoyApxL1yQY456Ov0eCk2AziqCteXSdWXhDgkDQK5FRUEqUFb6gb5CoWGQDvO6VEAclC7fIQpFpr8ymBfA6ozJ3FZpxEhqtqio20l1yzKNz7ranoA1Jb6P1RQUAgvCisZqIv7IZefFY6fsbFZEki4ue3hiaCjERmrJeSSli5ljBNQTYybDY6eHiyS6c/5AwINvgGUGUinq/pek64gg7AMv0EdB76avqynBXh0tVDyKyYvZbmygStGsTXxZ0U/10oXP4bYeeLT9rPCQQBU3zLgAAAABJRU5ErkJggg==)
+    no-repeat center;
+  background-size: 100%;
+  margin: 0 5px;
+}
 
-	.misty-input-warn {
-		display: block;
-		height: 16px;
-		width: 16px;
-		background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2ElEQVRYR+3Wv6vPURzH8ce7yEDyowwG3bqlpJTBqkQGg+hOTJYrkjLIcElK168/gIVBhqsU12ASi8VgI1IisqAsQkl9dHw/pK/v53vO58Ptu9yzntd5v5/n/T7v93mHEa8YsX/zAJ0iULEB67AG3/EWT4JnbVNaDFCxBIexD2sbHD3GVVwMvpbAFAFUPcensKLEKN7jSDCT0w8FqFiKG9ieM9SwfzI4PexsI0DlZ4XcxdaOzn8dmw5ONNkYBjCF6YzzY1hYoJsMLg+yNRCg6uX6DRZnABZhGd5ldB9TxQSf+3VNAOeRbpdbC+qHmR5dbk0FZ0sBXmEsZxFtAB4Fm7IAVa/Gnxc4T5I2AEm/Kvjwp+2/UlCxE7fnCGBz8CAHcDB1sjkC2BNcHyXA3v7uOCgFu3CrMAIbsRp3CvXbgnu5CLR5hIV+f8vGg5dDAdJmxQuMZ6x/wo7643mI5Rn902B9tgxrgJJGNBvsrvX3sSUDcDw4UwqwEq8zrfgb9uMLriG15abVrhXXt0qtOEXif6xD0VDauXngEg78I8HNYKLJRg4g7V/A0Y4Qs0i13zielY5kkzjXciRLv9+VHHgRQP0mRjeU9t9iJGN5LpRd94tT0NVB7tw8wA+iIWchMraXPwAAAABJRU5ErkJggg==) no-repeat center;
-		background-size: 130%;
-	}
+.misty-input-warn {
+  display: block;
+  height: 16px;
+  width: 16px;
+  background: transparent
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB2ElEQVRYR+3Wv6vPURzH8ce7yEDyowwG3bqlpJTBqkQGg+hOTJYrkjLIcElK168/gIVBhqsU12ASi8VgI1IisqAsQkl9dHw/pK/v53vO58Ptu9yzntd5v5/n/T7v93mHEa8YsX/zAJ0iULEB67AG3/EWT4JnbVNaDFCxBIexD2sbHD3GVVwMvpbAFAFUPcensKLEKN7jSDCT0w8FqFiKG9ieM9SwfzI4PexsI0DlZ4XcxdaOzn8dmw5ONNkYBjCF6YzzY1hYoJsMLg+yNRCg6uX6DRZnABZhGd5ldB9TxQSf+3VNAOeRbpdbC+qHmR5dbk0FZ0sBXmEsZxFtAB4Fm7IAVa/Gnxc4T5I2AEm/Kvjwp+2/UlCxE7fnCGBz8CAHcDB1sjkC2BNcHyXA3v7uOCgFu3CrMAIbsRp3CvXbgnu5CLR5hIV+f8vGg5dDAdJmxQuMZ6x/wo7643mI5Rn902B9tgxrgJJGNBvsrvX3sSUDcDw4UwqwEq8zrfgb9uMLriG15abVrhXXt0qtOEXif6xD0VDauXngEg78I8HNYKLJRg4g7V/A0Y4Qs0i13zielY5kkzjXciRLv9+VHHgRQP0mRjeU9t9iJGN5LpRd94tT0NVB7tw8wA+iIWchMraXPwAAAABJRU5ErkJggg==)
+    no-repeat center;
+  background-size: 130%;
+}
 </style>
