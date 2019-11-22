@@ -63,36 +63,55 @@ Vue.use(Switch)
 | change| value 值改变触发 | 回调函数 |
 </ClientOnly>
 
-## input
+## write
 
 <ClientOnly>
-  <sv-switch/>
+<sv-write/>
+</ClientOnly>
+
+```javascript
+import { Write } from 'solar-vue'
+Vue.component(Write.name, Write)
+/*
+or
+Vue.use(Write)
+*/
+```
+
+<ClientOnly>
+::: warning
+注意：由于pc端的点击延迟原因，我们在点击清除按钮的时候，可能清除按钮已经消失，因此我们更建议您在移动端去查看示例
+:::
+</ClientOnly>
+
+<ClientOnly>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
-| title | 标题 | string |- | - |
+| label | 标题 | string |- | - |
 | value/v-model|绑定值 | string |- | - |
 | placeholder|输入框占位文本 | string |- | - |
-| type| 类型 | string | id/tel/text- | text |
-| warn|是否显示错误提示标 | boolean |- | false |
-| regexp|验证正则 | RegExp |- | - |
-| isReturn|返回的验证信息 | object | {} | {} |
-| getAge| 一个根据传入身份id返回年龄的函数 | Function |- | - |
+| type| 类型 | string | text/tel/number/password/textarea | text |
+| clear|是否显示清除按钮 | boolean |- | true |
 | align| 内容方向 | string | left/right | left |
-| warn|是否显示错误提示标 | boolean |- | false |
+| errmessage|错误信息 | string |- | - |
 | regexp|验证正则 | regexp |- | - |
-| maxage|最大年龄| Number | - |  |
-| minage|最大年龄| Number | - |  |
-| max|最大长度| Number | - |  |
-
+| RightIcon|右侧年龄| string | - |  |
+| LeftIcon|左侧图标| string | - |  |
+| maxLength|最大长度| Number | - |  |
+| maxLength|最大长度| Number | - |  |
 <font size=5>Events</font>
 | 事件名称| 说明 | 回调参数 |
 | :------ | ------ | ------ |
-| change| value 值改变触发 | 回调函数 |
-| clear| 点击清除按钮触发 | 回调函数|
+| on-change| 值改变 | value |
+| on-clear| 清除时 | value|
+| on-focus| 获得焦点 | value|
+| on-blur| 失去焦点 | value|
+| left-click| 获得焦点 | value|
+| right-click| 失去焦点 | value|
 </ClientOnly>
 
-## select
+## picker
 
 <ClientOnly>
   <sv-select/>

@@ -78,9 +78,3 @@ this.$notify({
 | background | 背景色 | string | - | - |
 | color | 字体色 | string | - | - |
 </ClientOnly>
-
-## picker
-
-<ClientOnly>
-  <sv-picker/>
-</ClientOnly>

@@ -144,7 +144,9 @@ export default {
     font-size: 15px;
   }
 }
-
+.demo-blank {
+  height: 20px;
+}
 .demo-title {
   font-size: 14px;
   padding: 30px 12px 5px;

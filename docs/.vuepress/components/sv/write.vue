@@ -1,5 +1,42 @@
 <template>
   <div>
+    <layout-card>
+      <div>
+        <layout-column title="代码演示" url="write" tips="查看源代码" @handle="show = true"></layout-column>
+      </div>
+    </layout-card>
+    <div class="file-blank"></div>
+    <layout-card>
+      <div class="site-introduce">
+        <div class="site-introduce-title">介绍</div>
+        <div class="site-introduce-text">
+          <p>我们提供了非常详细的例子</p>
+          <p>当您设置了minLength,maxLength,regexp,required等属性时，我们默认您开启了自动验证</p>
+        </div>
+      </div>
+    </layout-card>
+    <layout-code title="搜索" v-model="show">
+      <pre v-highlightjs><code class="vue">{{ code }}</code></pre>
+    </layout-code>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/atom-one-dark.css'
+Vue.use(VueHighlightJS)
+export default {
+  name: 'm-toast',
+  data() {
+    return {
+      codeshow: false,
+      show: false,
+      type: '',
+      message: '',
+      code: `,
+<template>
+  <div>
     <div class="demo-title">基本用法</div>
     <div>
       <sv-write placeholder="基本用法" v-model="value1"></sv-write>
@@ -81,18 +118,8 @@
   </div>
 </template>
 
-
-<script>
-import { mapMutations } from 'vuex'
-const route = {
-  tags: '表单组件',
-  label: 'write',
-  path: 'write'
-}
 export default {
-  ...route,
   created() {
-    this.commitRoute(route)
     //const idReg18 = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
   },
   data() {
@@ -108,9 +135,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      commitRoute: 'changeRoute'
-    }),
     change(val) {
       console.log(val)
     },
@@ -128,6 +152,14 @@ export default {
     },
     rightclick() {
       console.log('点击右侧图标')
+    }
+  }
+}
+
+
+`
+        .replace(/^ {8}/gm, '')
+        .trim()
     }
   }
 }

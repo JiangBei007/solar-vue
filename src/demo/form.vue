@@ -83,11 +83,12 @@
 
 
 <script>
+import { getAge } from './../until/common'
 import { mapMutations } from 'vuex'
 const route = {
   tags: '表单组件',
-  label: 'write',
-  path: 'write'
+  label: 'form',
+  path: 'form'
 }
 export default {
   ...route,

@@ -11,7 +11,7 @@ gaojingweo 2019/11/21
   position: relative;
   line-height: @write-line-height;
   display: flex;
-  font-size: @label-font;
+  font-size: @write-label-font;
 }
 .sv-write-required::after {
   position: absolute;
@@ -22,29 +22,26 @@ gaojingweo 2019/11/21
   color: @write-required;
 }
 .sv-write-label {
-  width: 90px;
+  width: @write-width;
+  i {
+    margin-right: @write-icon-margin;
+  }
 }
 .sv-write-body {
   flex: 1;
 }
 .sv-write-inner {
   display: flex;
-  align-items: center;
 }
 .sv-write-inner i {
   display: block;
-  font-size: 16px;
   color: #9f9f9f;
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
   text-align: center;
-  margin-left: 5px;
+  margin-left: @write-icon-margin;
 }
 .sv-write-input {
   width: 100%;
   color: @write-text-color;
-  min-height: 0;
 }
 .sv-write-input::-webkit-scrollbar {
   width: 0;

@@ -53,7 +53,9 @@ write.methods = {
     }
     e.target.value = value
     this.$emit('input', value)
+    this.$emit('on-change', value)
     this.judge(value)
+    this.autosize()
   },
   focus(e) {
     this.clearIcon = true
@@ -65,11 +67,19 @@ write.methods = {
       this.clearIcon = false
     }, 0)
     this.judge(e.target.value)
+    this.$emit('on-blur', e.target.value)
   },
   clearFn() {
     this.$emit('input', '')
     this.$emit('on-clear', '')
     this.judge('')
+    this.autosize()
+  },
+  rightClick() {
+    this.$emit('right-click')
+  },
+  leftClick() {
+    this.$emit('left-click')
   },
   judge(value) {
     const { required, regexp, minLength } = this
@@ -105,7 +115,18 @@ write.methods = {
 
       this.state = state
     }
+  },
+  autosize() {
+    this.$nextTick(() => {
+      const { write } = this.$refs
+      if (!write) return
+      write.style.height = 'auto'
+      write.style.height = write.scrollHeight + 'px'
+    })
   }
+}
+write.mounted = function() {
+  this.autosize()
 }
 write.render = function(h) {
   const {
@@ -116,19 +137,26 @@ write.render = function(h) {
     placeholder,
     clear,
     clearIcon,
+    LeftIcon,
     RightIcon,
     errmessage,
     reg,
     align
   } = this
+
   return (
     <div class="sv-write">
       <div
         class={{ 'sv-write-container': true, 'sv-write-required': required }}
       >
-        <div class="sv-write-label">
-          <span>{label}</span>
-        </div>
+        {label && (
+          <div class="sv-write-label">
+            {LeftIcon && (
+              <Icon name={LeftIcon} nativeOnClick={this.leftClick}></Icon>
+            )}
+            <span>{label}</span>
+          </div>
+        )}
         <div class="sv-write-body">
           <div class="sv-write-inner">
             {type !== 'textarea' && (
@@ -147,8 +175,12 @@ write.render = function(h) {
             )}
             {type === 'textarea' && (
               <textarea
+                ref="write"
                 type="text"
-                class="sv-write-input"
+                class={{
+                  'sv-write-input': true,
+                  ['sv-write-' + align]: !!align
+                }}
                 placeholder={placeholder}
                 value={value}
                 onFocus={this.focus}
@@ -162,7 +194,9 @@ write.render = function(h) {
                 onClick={this.clearFn}
               ></i>
             )}
-            {RightIcon && <Icon name={RightIcon}></Icon>}
+            {RightIcon && (
+              <Icon name={RightIcon} nativeOnClick={this.rightClick}></Icon>
+            )}
           </div>
           {reg && errmessage && (
             <div
