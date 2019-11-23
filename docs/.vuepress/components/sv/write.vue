@@ -10,8 +10,9 @@
       <div class="site-introduce">
         <div class="site-introduce-title">介绍</div>
         <div class="site-introduce-text">
-          <p>我们提供了非常详细的例子</p>
-          <p>当您设置了minLength,maxLength,regexp,required等属性时，我们默认您开启了自动验证</p>
+          <p>我们为此组件内置了一个状态state用来判断验证结果，当然，您也可以自己验证</p>
+          <p>当您设置了regexp,minLength,required等属性时，我们默认您开启了自动验证</p>
+          <p>我们推荐您结合本文的Form组件搭配使用</p>
         </div>
       </div>
     </layout-card>
@@ -27,7 +28,6 @@ import VueHighlightJS from 'vue-highlightjs'
 import 'highlight.js/styles/atom-one-dark.css'
 Vue.use(VueHighlightJS)
 export default {
-  name: 'm-toast',
   data() {
     return {
       codeshow: false,

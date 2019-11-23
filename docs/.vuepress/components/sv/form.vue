@@ -1,5 +1,43 @@
 <template>
   <div>
+    <layout-card>
+      <div>
+        <layout-column title="代码演示" url="form" tips="查看源代码" @handle="show = true"></layout-column>
+      </div>
+    </layout-card>
+    <div class="file-blank"></div>
+    <layout-card>
+      <div class="site-introduce">
+        <div class="site-introduce-title">介绍</div>
+        <div class="site-introduce-text">
+          <p>为了保持组件的灵活性，我们并没有在form组件内部去内置按钮，并以按钮去获取内部子组件验证状态(state)</p>
+          <p>您可以给Form组件设置ref属性，并以getStates方法获得子组件所有属性</p>
+          <p>但其实以ref获得并非我本意，因此我们提供了一个prop参数，以回调的形式返回验证结果（看右侧示例)</p>
+          <p>您也可以自己封装组件来配合我们的form组件</p>
+        </div>
+      </div>
+    </layout-card>
+    <layout-code title="搜索" v-model="show">
+      <pre v-highlightjs><code class="vue">{{ code }}</code></pre>
+    </layout-code>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue'
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/atom-one-dark.css'
+Vue.use(VueHighlightJS)
+export default {
+  data() {
+    return {
+      codeshow: false,
+      show: false,
+      type: '',
+      message: '',
+      code: `,
+<template>
+  <div>
     <div class="demo-title">表单验证</div>
     <div class="demo-container">
       <sv-form :resolve="resolve" ref="svform">
@@ -41,19 +79,8 @@
 </template>
 
 
-<script>
 import { mapMutations } from 'vuex'
-const route = {
-  tags: '表单组件',
-  label: 'form',
-  path: 'form'
-}
 export default {
-  ...route,
-  created() {
-    this.commitRoute(route)
-    //const idReg18 = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
-  },
   data() {
     return {
       value1: '',
@@ -85,6 +112,13 @@ export default {
     ouput() {
       const arr = this.$refs.svform.getStates()
       console.log(arr)
+    }
+  }
+}
+
+`
+        .replace(/^ {8}/gm, '')
+        .trim()
     }
   }
 }

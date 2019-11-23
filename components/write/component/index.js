@@ -3,9 +3,7 @@ const write = {
   name: 'SvWrite'
 }
 write.props = {
-  value: {
-    type: [String, Number]
-  },
+  value: String,
   label: String,
   type: {
     type: String,
@@ -25,7 +23,12 @@ write.props = {
   required: Boolean,
   placeholder: String,
   maxLength: Number,
-  minLength: Number,
+  minLength: {
+    type: Number,
+    validator(value) {
+      return value > 0
+    }
+  },
   align: {
     type: String,
     validator(value) {
@@ -33,11 +36,25 @@ write.props = {
     }
   }
 }
+write.created = function() {
+  if (this.value) {
+    this.judge()
+  } else {
+    if (!this.required && !this.regexp && !this.minLength) {
+      this.state = true
+    }
+  }
+}
 write.data = function() {
   return {
     clearIcon: false,
     reg: false,
-    state: true
+    state: false
+  }
+}
+write.watch = {
+  value(nvl) {
+    this.judge(nvl)
   }
 }
 write.methods = {
@@ -54,7 +71,6 @@ write.methods = {
     e.target.value = value
     this.$emit('input', value)
     this.$emit('on-change', value)
-    this.judge(value)
     this.autosize()
   },
   focus(e) {
@@ -72,7 +88,6 @@ write.methods = {
   clearFn() {
     this.$emit('input', '')
     this.$emit('on-clear', '')
-    this.judge('')
     this.autosize()
   },
   rightClick() {
@@ -83,37 +98,38 @@ write.methods = {
   },
   judge(value) {
     const { required, regexp, minLength } = this
-    let state = true
-    if (required) {
-      if (!value) {
-        this.reg = true
-        state = false
-      } else {
-        this.reg = false
-        state = true
-      }
-      this.state = state
-      return
-    }
-    if (value) {
+    const judge = () => {
       if (regexp) {
         if (!regexp.test(value)) {
           this.reg = true
-          state = false
+          this.state = false
         } else {
           this.reg = false
-          state = true
+          this.state = true
+        }
+      } else if (minLength) {
+        if (value.length < minLength) {
+          this.reg = true
+          this.state = false
+        } else {
+          this.reg = false
+          this.state = true
         }
       } else {
-        if (minLength) {
-          if (value.length < minLength) {
-            this.reg = true
-            state = false
-          }
-        }
+        this.reg = false
+        this.state = true
       }
-
-      this.state = state
+    }
+    if (!value) {
+      if (!required && !regexp && !minLength) {
+        this.reg = false
+        this.state = true
+      } else {
+        this.reg = true
+        this.state = false
+      }
+    } else {
+      judge()
     }
   },
   autosize() {

@@ -85,6 +85,12 @@ Vue.use(Write)
 </ClientOnly>
 
 <ClientOnly>
+::: warning
+关于验证：当您传入了正则表达式验证时，我们首先已此规则为准。当此项不是必填项时候，如果值为空，那么我们认为验证通过。否则，如果值为空我们认为其无法通过验证。如果其有值，但又不是必填项，我们会以minLength为主
+:::
+</ClientOnly>
+
+<ClientOnly>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
@@ -111,23 +117,31 @@ Vue.use(Write)
 | right-click| 失去焦点 | value|
 </ClientOnly>
 
-## picker
+## form
 
 <ClientOnly>
-  <sv-select/>
+<sv-form/>
+</ClientOnly>
+
+```javascript
+import { Form } from 'solar-vue'
+Vue.component(Form.name, Form)
+/*
+or
+Vue.use(Form)
+*/
+```
+
+<ClientOnly>
+::: warning
+如果您自定义的组件想要结合此组件使用，那么为您的组件提供一个state属性用来代表验证状态，一个errmessge属性用来再验证不通过的时候提示，即可
+:::
+</ClientOnly>
+
+<ClientOnly>
 <font size=5>Attributes</font>
 | 参数| 说明 | 类型 | 可选值 | 默认值 |
 | :------ | ------ | ------ | ------ | ------ |
-| value/v-model| 选中项绑定值 | string |- | - |
-| placeholder| 占位符 | string | - | - |
-| title | 标题 | string | - |- |
-| direction| 选项对齐方式 | string | rtl/ltr | rtl |
-| configure | | 选项列表，可以为简单数组，或者 { key: KEY, value: VALUE } 结构的键值对数组。当使用键值对时，返回的value为key的值 | array |- | - |
-| value-map |设置键值对映射用以自动转换接口数据, 如 ['value', 'label'] | array | - | ['key','value'] |
-
-<font size=5>Events</font>
-| 事件名称| 说明 | 回调参数 |
-| :------ | ------ | ------ |
-| change| value 值改变触发 | 回调函数 |
+| resolve | 见示例 | Object |- | - |
 
 </ClientOnly>

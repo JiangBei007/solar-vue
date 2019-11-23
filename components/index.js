@@ -13,7 +13,7 @@ import SwiperItem from './swiper-item/index'
 import Tab from './tab/index'
 import TabItem from './tab-item/index'
 import Write from './write/index'
-//exports.icon = Icon
+import Form from './form/index'
 const components = [
   Icon,
   Loading,
@@ -26,7 +26,8 @@ const components = [
   SwiperItem,
   Tab,
   TabItem,
-  Write
+  Write,
+  Form
 ]
 const install = function install(Vue) {
   components.forEach(function(Component) {
@@ -48,7 +49,9 @@ export {
   Swiper,
   SwiperItem,
   Tab,
-  TabItem
+  TabItem,
+  Write,
+  Form
 }
 
 export default {
