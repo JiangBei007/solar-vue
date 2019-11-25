@@ -14,6 +14,7 @@ import Tab from './tab/index'
 import TabItem from './tab-item/index'
 import Write from './write/index'
 import Form from './form/index'
+import Stepper from './stepper/index'
 const components = [
   Icon,
   Loading,
@@ -27,7 +28,8 @@ const components = [
   Tab,
   TabItem,
   Write,
-  Form
+  Form,
+  Stepper
 ]
 const install = function install(Vue) {
   components.forEach(function(Component) {
@@ -51,7 +53,8 @@ export {
   Tab,
   TabItem,
   Write,
-  Form
+  Form,
+  Stepper
 }
 
 export default {
