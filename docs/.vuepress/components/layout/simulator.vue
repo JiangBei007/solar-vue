@@ -5,34 +5,66 @@
 </template>
 
 <script>
-const List = {
-  basic: ['icon'],
-  form: ['input'],
-  feedback: ['toast'],
-  datadisplay: ['swiper']
-}
-const LabelList = Object.keys(List)
-const AnalysisPath = function(arr, path) {
-  for (let i = 0; i < arr.length; i++) {
-    if (path.indexOf(arr[i]) > -1) {
-      return arr[i]
-    }
+// const List = {
+//   basic: ['icon'],
+//   form: ['input'],
+//   feedback: ['toast'],
+//   datadisplay: ['swiper']
+// }
+// const LabelList = Object.keys(List)
+// const AnalysisPath = function(arr, path) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (path.indexOf(arr[i]) > -1) {
+//       return arr[i]
+//     }
+//   }
+//   return ''
+// }
+const whiteList = [
+  'icon',
+  'loading',
+  'popup',
+  'stepper',
+  'tab',
+  'notify',
+  'toast',
+  'button',
+  'switch',
+  'write',
+  'form',
+  'swiper'
+]
+
+const hash = function(pathName) {
+  const newArr = whiteList.filter(item => pathName.indexOf(item) > 0)
+  if (newArr.length) {
+    this.hash = newArr[0]
+  } else {
+    this.hash = ''
   }
-  return ''
 }
 export default {
   watch: {
     $route(nvl) {
-      const { hash, path } = nvl
-      const label = AnalysisPath(LabelList, nvl.path)
-      if (!hash && label) {
-        console.log(label)
-        if (List[label]) {
-          this.hash = List[label][0]
-        }
-      } else {
-        this.hash = nvl.hash.replace('#', '')
-      }
+      hash.call(this, nvl.path)
+      // const { hash, path } = nvl
+      // const label = AnalysisPath(LabelList, nvl.path)
+      // if (!hash && label) {
+      //   console.log(label)
+      //   if (List[label]) {
+      //     this.hash = List[label][0]
+      //   }
+      // } else {
+      //   this.hash = nvl.hash.replace('#', '')
+      // }
+    }
+  },
+  mounted() {
+    try {
+      const pathName = window.location.pathname
+      hash.call(this, pathName)
+    } catch (err) {
+      console.log(err)
     }
   },
   computed: {

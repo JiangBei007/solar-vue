@@ -71,15 +71,35 @@ module.exports = {
         ]
       },
       {
-        title: '组件',
+        title: '基础组件',
         collapsable: false,
         children: [
-          'views/components/basic/',
-          'views/components/feedback/',
-          'views/components/form/',
-          'views/components/datadisplay/',
-          'views/components/other/'
+          'views/basic/icon.md',
+          'views/basic/loading.md',
+          'views/basic/popup.md',
+          'views/basic/stepper.md',
+          'views/basic/tab.md'
         ]
+      },
+      {
+        title: '反馈组件',
+        collapsable: false,
+        children: ['views/feedback/notify.md', 'views/feedback/toast.md']
+      },
+      {
+        title: '表单组件',
+        collapsable: false,
+        children: [
+          'views/form/button.md',
+          'views/form/switch.md',
+          'views/form/write.md',
+          'views/form/form.md'
+        ]
+      },
+      {
+        title: '功能组件',
+        collapsable: false,
+        children: ['views/function/swiper.md']
       }
     ]
   },
