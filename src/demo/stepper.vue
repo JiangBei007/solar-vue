@@ -12,9 +12,9 @@
     <div class="demo-container">
       <sv-stepper v-model="value3" :max="max"></sv-stepper>
     </div>
-    <div class="demo-title">递进值为小数</div>
+    <div class="demo-title">递进值为小数 最大值为5</div>
     <div class="demo-container">
-      <sv-stepper v-model="value4" :min="min" :step="step"></sv-stepper>
+      <sv-stepper v-model="value4" :min="min" :step="step" :max="5"></sv-stepper>
     </div>
     <div class="demo-title">只读</div>
     <div class="demo-container">

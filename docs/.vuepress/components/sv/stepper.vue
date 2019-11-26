@@ -45,15 +45,19 @@ export default {
     </div>
     <div class="demo-title">固定最大值</div>
     <div class="demo-container">
-      <sv-stepper v-model="value3" :min="min"></sv-stepper>
+      <sv-stepper v-model="value3" :max="max"></sv-stepper>
+    </div>
+    <div class="demo-title">递进值为小数 最大值为5</div>
+    <div class="demo-container">
+      <sv-stepper v-model="value4" :min="min" :step="step" :max="5"></sv-stepper>
     </div>
     <div class="demo-title">只读</div>
     <div class="demo-container">
-      <sv-stepper v-model="value4" readonly></sv-stepper>
+      <sv-stepper v-model="value5" readonly></sv-stepper>
     </div>
     <div class="demo-title">禁用</div>
     <div class="demo-container">
-      <sv-stepper v-model="value5" :min="min" disabled></sv-stepper>
+      <sv-stepper v-model="value6" :min="min" disabled></sv-stepper>
     </div>
   </div>
 </template>
@@ -66,11 +70,14 @@ export default {
       value3: 10,
       value4: 0,
       value5: 0,
+      value6: 0,
       min: -1,
-      max: 10
+      max: 10,
+      step: 1.2
     }
   }
 }
+
 
 
 `

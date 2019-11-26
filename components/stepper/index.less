@@ -13,6 +13,7 @@ gaojingweo 2019/9
   border-radius: 2px;
 }
 .sv-stepper-btn:active {
+  background-color: #eff6fd;
 }
 .sv-stepper-reduce::before,
 .sv-stepper-add:before {
@@ -28,7 +29,16 @@ gaojingweo 2019/9
 }
 .sv-stepper-reduce {
 }
-.sv-stepper-add {
+.sv-stepper-add::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #111a34;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 13px;
 }
 .sv-stepper-write {
   background-color: #f9fafb;
@@ -36,6 +46,6 @@ gaojingweo 2019/9
   text-align: center;
   flex: 1;
 }
-.sv-stepper-btn-dissbled {
+.sv-stepper-btn-disabled {
   opacity: 0.5;
 }

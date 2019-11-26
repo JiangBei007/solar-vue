@@ -39,17 +39,7 @@ export default {
     },
     change(e) {
       const value = e.target.value
-      const { min, max } = this
-      let val = parseFloat(value)
-      if (typeof min === 'number') {
-        val = Math.max(val, min)
-      }
-      if (typeof max === 'number') {
-        val = Math.min(val, max)
-      }
-      if (isNaN(val)) {
-        val = this.initVal
-      }
+      let val = String(value).replace(/[^0-9.-]/g, '')
       e.target.value = val
       this.$emit('input', val)
       this.$emit('change', val)
@@ -60,21 +50,21 @@ export default {
       if (typeof min === 'number') {
         val = Math.max(val, min)
       }
+      val = Math.round(val * 100) / 100
       this.$emit('input', val)
       this.$emit('reduce', val)
+      this.$emit('change', val)
     },
     add() {
       const { value, step, max } = this
       let val = parseFloat(value) + step
       if (typeof max === 'number') {
-        if (val > max) {
-          val === max - step
-        }
-        val = val.toFixed(1)
-        // val = Math.min(val, max)
+        val = Math.min(val, max)
       }
+      val = Math.round(val * 100) / 100
       this.$emit('input', val)
       this.$emit('add', val)
+      this.$emit('change', val)
     },
     focus(e) {
       this.$emit('focus', e.target.value)
@@ -109,7 +99,7 @@ export default {
           class={{
             'sv-stepper-btn': true,
             'sv-stepper-reduce': true,
-            'sv-stepper-btn-dissbled': reducedis
+            'sv-stepper-btn-disabled': reducedis
           }}
           onClick={() => {
             !reducedis && this.reduce()
@@ -127,8 +117,8 @@ export default {
         <div
           class={{
             'sv-stepper-btn': true,
-            'sv-stepper-reduce': true,
-            'sv-stepper-btn-dissbled': adddis
+            'sv-stepper-add': true,
+            'sv-stepper-btn-disabled': adddis
           }}
           onClick={() => {
             !adddis && this.add()
