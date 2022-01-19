@@ -1,20 +1,8 @@
 <template>
   <div class="app">
-    <div class="nav-bar" v-if="!isMobile">
-      <div>
-        <div class="nav-bar-bg">
-          <img src="./static/images/header-bac.png" />
-          <span class="nav-bar-date">{{ date }}</span>
-        </div>
-        <div class="nav-bar-url">
-          <div>{{ url }}</div>
-        </div>
-      </div>
-    </div>
     <div class="nav-demo-name" v-if="$route.path !== '/'">
       <img src="./static/images/home-icon.png" @click.prevent="goHome" />
       <i>|</i>
-
       <span>{{ route.label }}</span>
     </div>
     <router-view></router-view>
@@ -81,50 +69,7 @@ export default {
   flex-direction: column;
   background: #f5f5f9;
 }
-.nav-bar {
-  height: 70px;
-  > div {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding-top: 10px;
-    background: #3f3f3f;
-    z-index: 10;
-  }
-  img {
-    margin: 2px 0;
-    width: 100%;
-  }
 
-  .nav-bar-date {
-    position: absolute;
-    top: 10px;
-    right: 50%;
-    margin-right: -14px;
-    font-size: 14px;
-    color: #fff;
-  }
-  .nav-bar-url {
-    height: 40px;
-    padding: 0 10px;
-    > div {
-      font-size: 14px;
-      height: 28px;
-      line-height: 28px;
-      color: #fff;
-      background-color: #a2a2a2;
-      margin: 0 auto;
-      border-radius: 4px;
-      white-space: nowrap;
-      overflow-x: scroll;
-    }
-    > div::-webkit-scrollbar {
-      width: 0px;
-      height: 0px;
-    }
-  }
-}
 .nav-demo-name {
   font-size: 19px;
   color: #404040;

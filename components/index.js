@@ -15,6 +15,7 @@ import TabItem from './tab-item/index'
 import Write from './write/index'
 import Form from './form/index'
 import Stepper from './stepper/index'
+import ScrollView from './scroll-view/index'
 const components = [
   Icon,
   Loading,
@@ -29,10 +30,11 @@ const components = [
   TabItem,
   Write,
   Form,
-  Stepper
+  Stepper,
+  ScrollView
 ]
 const install = function install(Vue) {
-  components.forEach(function(Component) {
+  components.forEach(function (Component) {
     Vue.component(Component.name, Component)
   })
 }
@@ -54,7 +56,8 @@ export {
   TabItem,
   Write,
   Form,
-  Stepper
+  Stepper,
+  ScrollView
 }
 
 export default {

@@ -1,6 +1,6 @@
 const context = require.context('./../demo/', true, /.vue$/)
 const routes = []
-context.keys().forEach(path => {
+context.keys().forEach((path) => {
   const v = context(path)
   routes.push({
     path: '/' + v.default.path,
@@ -9,5 +9,4 @@ context.keys().forEach(path => {
     component: v.default
   })
 })
-
 export default routes

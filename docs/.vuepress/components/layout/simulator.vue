@@ -5,21 +5,6 @@
 </template>
 
 <script>
-// const List = {
-//   basic: ['icon'],
-//   form: ['input'],
-//   feedback: ['toast'],
-//   datadisplay: ['swiper']
-// }
-// const LabelList = Object.keys(List)
-// const AnalysisPath = function(arr, path) {
-//   for (let i = 0; i < arr.length; i++) {
-//     if (path.indexOf(arr[i]) > -1) {
-//       return arr[i]
-//     }
-//   }
-//   return ''
-// }
 const whiteList = [
   'icon',
   'loading',
@@ -32,11 +17,12 @@ const whiteList = [
   'switch',
   'write',
   'form',
-  'swiper'
+  'swiper',
+  'scroll-view'
 ]
 
-const hash = function(pathName) {
-  const newArr = whiteList.filter(item => pathName.indexOf(item) > 0)
+const hash = function (pathName) {
+  const newArr = whiteList.filter((item) => pathName.indexOf(item) > 0)
   if (newArr.length) {
     this.hash = newArr[0]
   } else {
@@ -47,16 +33,6 @@ export default {
   watch: {
     $route(nvl) {
       hash.call(this, nvl.path)
-      // const { hash, path } = nvl
-      // const label = AnalysisPath(LabelList, nvl.path)
-      // if (!hash && label) {
-      //   console.log(label)
-      //   if (List[label]) {
-      //     this.hash = List[label][0]
-      //   }
-      // } else {
-      //   this.hash = nvl.hash.replace('#', '')
-      // }
     }
   },
   mounted() {
@@ -90,12 +66,14 @@ export default {
   right: 50%;
   margin-right: -160px;
   top: 50%;
-  margin-top: -280px;
-  height: 560px;
+  margin-top: -270px;
+  height: 540px;
   overflow: hidden;
   border-radius: 6px;
   z-index: 10;
-  background: #f5f5f9;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: #ebedf0 0 4px 12px;
   iframe {
     border: none;
     height: 100%;

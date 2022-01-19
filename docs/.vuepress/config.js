@@ -99,7 +99,7 @@ module.exports = {
       {
         title: '功能组件',
         collapsable: false,
-        children: ['views/function/swiper.md']
+        children: ['views/function/swiper.md', 'views/function/scroll-view.md']
       }
     ]
   },

@@ -1,0 +1,26 @@
+/*
+gaojingweo 2022/1/19
+*/
+@import './../style/var.less';
+.fine-scroll-container {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  .fine-scroll-body {
+    overflow: hidden;
+  }
+  .fine-scroll-refresh-container {
+    position: relative;
+  }
+  .fine-scroll-refresh {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    transform: translateY(-100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #969799;
+  }
+}
