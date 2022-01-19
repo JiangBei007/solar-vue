@@ -14,7 +14,7 @@ this.$notify({
 })
 ```
 
-## 源代码
+**源代码**
 
 ```vue
 <template>

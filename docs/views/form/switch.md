@@ -9,7 +9,7 @@ Vue.use(Switch)
 */
 ```
 
-## 源代码
+**源代码**
 
 ```vue
 <template>

@@ -9,7 +9,7 @@ Vue.use(Form)
 */
 ```
 
-## 源代码
+**源代码**
 
 ```vue
 <template>
@@ -55,14 +55,7 @@ Vue.use(Form)
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-const route = {
-  tags: '表单组件',
-  label: 'form',
-  path: 'form'
-}
 export default {
-  ...route,
   created() {
     this.commitRoute(route)
     //const idReg18 = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
@@ -77,9 +70,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      commitRoute: 'changeRoute'
-    }),
     cli(val) {
       this.resolve.then().then((res) => {
         const results = res.every((result) => result.state)

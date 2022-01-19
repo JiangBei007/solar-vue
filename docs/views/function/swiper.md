@@ -12,7 +12,7 @@ Vue.use(Swiper)
 - 我们尽可能地给您提供丰富细致的例子，如右侧->
 - 如果您特殊需要，你可以单独下载我们的 [swiper](https://www.npmjs.com/package/small-swiper),插件，自己实现符合您需求的组件使用，我们为您提供了丰富的[例子](https://www.npmjs.com/package/small-swiper)
 
-## 源代码
+**源代码**
 
 ```vue
 <template>
