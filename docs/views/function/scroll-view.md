@@ -11,9 +11,7 @@
       :loading.sync="loading"
     >
       <template #header>
-        <div class="scroll-top-container">
-          <img src="./../../assets/logo.png" />
-        </div>
+        <div class="scroll-top-container">VUE</div>
       </template>
       <ul class="list">
         <li v-for="val in list" :key="val">
@@ -33,8 +31,8 @@ export default {
   components: {},
   data() {
     return {
-      refresh: true,
       loadtext: '加载更多',
+      refresh: true, //是否支持下拉刷新
       loading: false, //是否正在加载中
       pulling: false, //是否正在刷新
       wh: window.innerHeight,
@@ -43,16 +41,15 @@ export default {
   },
   methods: {
     load() {
-      console.log(this.loading, 'loading')
+      console.log('到底了')
       this.loadtext = '加载中...'
       setTimeout(() => {
-        console.log('到底了', this.loading)
         this.list.push(...createData(10))
         this.loading = false
       }, 1000)
     },
     refreshFn() {
-      console.log('触发下拉刷新', this.pulling)
+      console.log('触发下拉刷新')
       setTimeout(() => {
         this.pulling = false
         this.list.sort((a, b) => Math.random() - 0.5)
@@ -68,9 +65,13 @@ export default {
     height: 100%;
   }
   .scroll-top-container {
+    height: 300px;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: #35495e;
+    color: #fff;
+    font-size: 50px;
   }
   .loading-text {
     line-height: 24px;

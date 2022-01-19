@@ -2,14 +2,13 @@
   <div class="app">
     <div class="nav-demo-name" v-if="$route.path !== '/'">
       <img src="./static/images/home-icon.png" @click.prevent="goHome" />
-      <i>|</i>
-      <span>{{ route.label }}</span>
+      <!-- <i>|</i>
+      <span>回首页</span> -->
     </div>
     <router-view></router-view>
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
 import { getNetworkType, isMobile } from './until/getBom'
 export default {
   data() {
@@ -21,7 +20,6 @@ export default {
   },
   watch: {},
   computed: {
-    ...mapGetters(['route']),
     date() {
       const date = new Date()
       return date.getHours() + ':' + date.getMinutes()
@@ -71,9 +69,9 @@ export default {
 }
 
 .nav-demo-name {
-  font-size: 19px;
+  font-size: 14px;
   color: #404040;
-  padding: 21px 0 21px 15px;
+  padding: 10px 0 10px 15px;
   text-align: left;
   height: 24px;
   line-height: 24px;

@@ -4,10 +4,6 @@ title: 'Icon'
 
 # Icon
 
-<ClientOnly>
-<sv-icon/>
-</ClientOnly>
-
 ```javascript
 import { Icon } from 'solar-vue'
 Vue.component(Icon.name, Icon)

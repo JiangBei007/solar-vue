@@ -5,14 +5,14 @@
         <img src="./../static/images/logo120.png" />
         <span>solar-vue</span>
       </h1>
-      <h2 class="sv-demo-subtitle">XX公司移动端组件库</h2>
+      <!-- <h2 class="sv-demo-subtitle">移动端组件库</h2> -->
     </div>
     <div class="sv-demo-bd">
       <div class="sv-demo-list" v-for="(item, index) in list" :key="index">
         <div class="sv-list-header" @click="select(index)">
           <div class="sv-demo-category-name">{{ item.label }}</div>
           <div class="sv-demo-category-arrow">
-            <span :class="{active:item.checked}">
+            <span :class="{ active: item.checked }">
               <img src="./../icons/drop-down-right.png" />
             </span>
           </div>
@@ -35,7 +35,7 @@ import routes from './../router/routeMap'
 export default {
   path: '',
   mounted() {
-    let arr = routes.filter(item => item.path != '/').map(item => item.tags)
+    let arr = routes.filter((item) => item.path != '/').map((item) => item.tags)
     arr = [...new Set(arr)]
     const list = []
     for (let i = 0; i < arr.length; i++) {
@@ -54,7 +54,6 @@ export default {
       }
     }
     this.list = list
-    //console.log(list)
   },
   data() {
     return {

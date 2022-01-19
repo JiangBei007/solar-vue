@@ -11,7 +11,7 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "gh-pages -d docs/.vuepress/dist",
-    "deploy:all": "npm run build && gh-pages -d docs/.vuepress/dist",
+    "deploy:all": "npm run docs:build && gh-pages -d docs/.vuepress/dist",
     "lint": "eslint --ext .js,.vue src",
     "fix": "eslint --fix --ext .js,.vue src --fix",
     "dev": "webpack-dev-server --progress --config build/example/webpack-dev-conf.js",
