@@ -16,6 +16,7 @@ import Write from './write/index'
 import Form from './form/index'
 import Stepper from './stepper/index'
 import ScrollView from './scroll-view/index'
+import SubmitStep from './submit-step/index'
 const components = [
   Icon,
   Loading,
@@ -31,7 +32,8 @@ const components = [
   Write,
   Form,
   Stepper,
-  ScrollView
+  ScrollView,
+  SubmitStep
 ]
 const install = function install(Vue) {
   components.forEach(function (Component) {
@@ -57,7 +59,8 @@ export {
   Write,
   Form,
   Stepper,
-  ScrollView
+  ScrollView,
+  SubmitStep
 }
 
 export default {
